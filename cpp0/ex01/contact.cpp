@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:24:49 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/21 14:55:58 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/06/24 16:59:00 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void Contact::setNphone(std::string nphone)
 
 void Contact::setSecret(std::string secr)
 {
-	this->FirstName = secr;
+	this->Secret = secr;
 }
 
 bool Contact::isValid()

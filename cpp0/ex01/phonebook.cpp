@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:23:09 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/22 15:48:31 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/06/24 17:19:04 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,19 @@ void Phonebook::printPhonebook()
 	for(int i = 0; i < len; i++)
 	{
 		std::cout << std::string(44, '-') << std::endl;
-		std::cout << std::setw(22) << "index|" << "first name|" << std::setw(11) << "last name|" << std::setw(11) << "nick name|" << std::endl;
-		std::cout << std::setw(11) << i + 1 << "|";
+		std::cout << std::setw(22) << "index|first name|" << std::setw(11) << "last name|" << std::setw(11) << "nick name|" << std::endl;
+		std::cout << std::setw(10) << i + 1 << "|";
 		if (list[i].getFname().length() > 10)
-			std::cout << std::setw(11) << list[i].getFname().substr(0, 9) + '.' << "|";
+			std::cout << std::setw(10) << list[i].getFname().substr(0, 9) + '.' << "|";
 		else
-			std::cout << std::setw(11) << list[i].getFname() << "|";
+			std::cout << std::setw(10) << list[i].getFname() << "|";
 		if (list[i].getLname().length() > 10)
-			std::cout << std::setw(11) << list[i].getLname().substr(0, 9) + '.' << "|";
+			std::cout << std::setw(10) << list[i].getLname().substr(0, 9) + '.' << "|";
 		else
-			std::cout << std::setw(11) << list[i].getLname() << "|";
+			std::cout << std::setw(10) << list[i].getLname() << "|";
 		if (list[i].getNname().length() > 10)
-			std::cout << std::setw(11) << list[i].getNname().substr(0, 9) + '.' << "|";
+			std::cout << std::setw(10) << list[i].getNname().substr(0, 9) + '.' << "|";
 		else
-			std::cout << std::setw(11) << list[i].getNname() << "|";
+			std::cout << std::setw(10) << list[i].getNname() << "|" << std::endl;
 	}
 }
