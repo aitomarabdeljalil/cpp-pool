@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:20:07 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/24 17:10:47 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/06/24 19:01:47 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,18 @@ Contact	getinfo()
 	return c;
 }
 
+void getoneContact(Contact c)
+{
+	std::cout << "First Name :=> " << c.getFname() << std::endl;
+	std::cout << "Last Name :=> " << c.getLname() << std::endl;
+	std::cout << "Nick Name :=> " << c.getNname() << std::endl;
+}
 int main(int ac, char **av)
 {
 	Phonebook p;
 	std::string	cmd;
 	int i;
 
-	//  if (std::cin.eof())
-    //     exit(1);
 	std::cout << "> ";
 	while (std::getline(std::cin, cmd))
 	{
@@ -61,14 +65,11 @@ int main(int ac, char **av)
 		else if (cmd == "ADD")
 		{
 			p.ft_addContact(getinfo());
-
-
 		}
 		else if (cmd == "SEARCH")
 		{
 			p.printPhonebook();
-			// std::getline(std::cin, i);
-			// p.ft_search(i);
+
 		}
 		// if (std::cin.eof())
         // 	exit(1);
