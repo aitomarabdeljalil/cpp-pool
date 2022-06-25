@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:20:07 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/24 19:01:47 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/06/25 18:10:32 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,30 @@ Contact	getinfo()
 	return c;
 }
 
-void getoneContact(Contact c)
+int ft_getnbr()
 {
-	std::cout << "First Name :=> " << c.getFname() << std::endl;
-	std::cout << "Last Name :=> " << c.getLname() << std::endl;
-	std::cout << "Nick Name :=> " << c.getNname() << std::endl;
+	int		nbr;
+	size_t	idx;
+	std::string	s;
+
+	while (1)
+	{
+		std::getline(std::cin, s);
+		try
+		{
+			nbr = std::stoi(s, &idx);
+			if (s.length() == idx)
+				return nbr;
+			else
+				std::cout << "Invalid input" << std::endl;
+		}
+		catch(...)
+		{
+			std::cerr << "Invalid input" << std::endl;
+		}
+	}
 }
+
 int main(int ac, char **av)
 {
 	Phonebook p;
@@ -60,17 +78,22 @@ int main(int ac, char **av)
 	std::cout << "> ";
 	while (std::getline(std::cin, cmd))
 	{
+		cmd.erase(std::remove_if(cmd.begin(), cmd.end(), isspace), cmd.end());
 		if (cmd == "EXIT")
 			exit(0);
 		else if (cmd == "ADD")
-		{
 			p.ft_addContact(getinfo());
-		}
 		else if (cmd == "SEARCH")
 		{
 			p.printPhonebook();
-
+			i = ft_getnbr();
+			if (i < 0 || i > p.getLen())
+				std::cout << "Error!!" << std::endl;
+			else
+				p.printoneContact(i - 1);
 		}
+		else
+			std::cout << "Invalid command" << std::endl;
 		// if (std::cin.eof())
         // 	exit(1);
 		std::cout << "> ";

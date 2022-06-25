@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:23:09 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/24 17:19:04 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/06/25 10:59:31 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,13 @@ void Phonebook::printPhonebook()
 		else
 			std::cout << std::setw(10) << list[i].getNname() << "|" << std::endl;
 	}
+}
+
+int Phonebook::getLen() { return len; }
+
+void Phonebook::printoneContact(int i)
+{
+	std::cout << "First Name :=> " << list[i].getFname() << std::endl;
+	std::cout << "Last Name :=> " << list[i].getLname() << std::endl;
+	std::cout << "Nick Name :=> " << list[i].getNname() << std::endl;
 }

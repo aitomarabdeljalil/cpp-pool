@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 05:36:54 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/22 15:15:07 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/06/25 10:58:28 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ class Phonebook {
 		bool ft_addContact(Contact c);
 		void ft_search(int index);
 		void printPhonebook();
+		int getLen();
+		void printoneContact(int i);
 };
 #endif

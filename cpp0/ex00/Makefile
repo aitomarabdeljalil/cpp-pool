@@ -1,6 +1,6 @@
 NAME	:= megaphone
 CC		:= c++
-CFLAGS	:=
+FLAGS	:= -Wall -Wextra -Werror
 SRC		:= megaphone.cpp
 
 .PHONY: all re clean
@@ -13,4 +13,4 @@ clean:
 re: fclean all
 
 $(NAME): $(SRC)
-	$(CC) $(SRC) -o $(NAME)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
