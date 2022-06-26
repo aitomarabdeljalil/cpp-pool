@@ -4,6 +4,7 @@ FLAGS	:= -Wall -Wextra -Werror
 SRC 	:= 	contact.cpp\
 			main.cpp\
 			phonebook.cpp\
+
 OBJ 	:= ${patsubst %.cpp, %.o, ${SRC}}
 
 all : ${NAME}
