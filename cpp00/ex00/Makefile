@@ -7,7 +7,7 @@ SRC		:= megaphone.cpp
 
 all: $(NAME)
 
-clean:
+fclean:
 	rm -rf $(NAME)
 
 re: fclean all
