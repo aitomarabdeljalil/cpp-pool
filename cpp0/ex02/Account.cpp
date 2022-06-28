@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 09:29:55 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/27 18:51:55 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/06/28 09:11:33 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	Account::_displayTimestamp( void )
 
 Account::~Account(void)
 {
-	// _displayTimestamp();
-	// std::cout << "index:" << _accountIndex;
-	// std::cout << ";amount:" << _amount;
-	// std::cout << ";closed" << std::endl;
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";amount:" << _amount;
+	std::cout << ";closed" << std::endl;
 }
 
 Account::Account(int initial_deposit)
@@ -90,6 +90,7 @@ void	Account::makeDeposit(int deposit)
 	std::cout << ";deposit:" << deposit;
 
 	_amount += deposit;
+	_totalAmount += deposit;
 	Account::_totalNbDeposits++;
 	_nbDeposits++;
 
@@ -97,7 +98,29 @@ void	Account::makeDeposit(int deposit)
 	std::cout << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
-// bool	Account::makeWithdrawal( int withdrawal )
-// {
+bool	Account::makeWithdrawal( int withdrawal )
+{
+	bool	res;
 
-// }
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";p_amount:" <<  _amount;
+	if (withdrawal < _amount && withdrawal > 0)
+	{
+		std::cout << ";withdrawal:" << withdrawal;
+
+		_amount -= withdrawal;
+		_totalAmount -= withdrawal;
+		Account::_totalNbWithdrawals++;
+		_nbWithdrawals++;
+
+		std::cout << ";amount:" << _amount;
+		std::cout << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+		res = true;
+	}
+	else {
+		std::cout << ";withdrawal:refused" << std::endl;
+		res = false;
+	}
+	return res;
+}
