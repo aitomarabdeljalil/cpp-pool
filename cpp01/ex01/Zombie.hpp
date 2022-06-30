@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 12:01:14 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/29 13:58:49 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/06/28 10:55:05 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/06/30 11:30:23 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <iostream>
+# include <string>
 
-Zombie* newZombie(std::string name)
+class Zombie
 {
-	Zombie *z = new Zombie(name);
-	return z;
-}
+private:
+	std::string name;
+public:
+	//Zombie();
+	~Zombie();
+	void announce( void );
+	void setname(std::string name);
+	std::string getname();
+};
+
+Zombie* zombieHorde(int N, std::string name);
+#endif
