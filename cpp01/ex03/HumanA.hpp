@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 18:49:59 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/30 18:52:43 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/07/02 16:57:07 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,19 @@
 # define HUMAN_A
 # include <iostream>
 # include <string>
+# include "Weapon.hpp"
+
+class Weapon;
 
 class HumanA
 {
 private:
-	/* data */
+	Weapon& wa;
+	std::string	name;
 public:
-	HumanA(/* args */);
+	HumanA(std::string name, Weapon& wpa);
+	void	attack(void);
 	~HumanA();
 };
-
-HumanA::HumanA(/* args */)
-{
-}
-
-HumanA::~HumanA()
-{
-}
-
 
 #endif
