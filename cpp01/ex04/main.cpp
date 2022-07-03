@@ -12,8 +12,6 @@
 
 #include <string>
 #include <iostream>
-// #include <ifstream>
-// #include <ofstream>
 #include <fstream>
 
 int main(int ac, char **av)
@@ -29,6 +27,7 @@ int main(int ac, char **av)
 	std::fstream file;
 	std::fstream fileto;
 	std::string line;
+	int index;
 
 	fileto.open(filename + ".replace", std::ios::out);
 	if (!fileto)
@@ -36,8 +35,18 @@ int main(int ac, char **av)
 	else
 	{
 		file.open(filename, std::ios::in);
-		while (getline(file, line)) {
-            
+		if (!file)
+		{
+			std::cout << "Source file cant get open or doesnt exist" << std::endl;
+			return 0;
+		}
+		while (getline(file, line))
+		{
+            while ((index = (int) line.find(s1)) != std::string::npos)
+			{
+				line.erase(index, s1.length);
+			}
+			
 			fileto << line << "\n";
         }
 	}
