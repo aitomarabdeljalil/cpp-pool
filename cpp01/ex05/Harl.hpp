@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:36:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/05 16:30:15 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/07/06 21:20:56 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,5 @@ private:
 public:
 	void complain( std::string level );
 };
-
-void Harl::complain( std::string level )
-{
-	
-}
 
 #endif
