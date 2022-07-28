@@ -1,32 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 11:46:11 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/28 18:22:31 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/07/28 19:00:44 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/07/28 19:00:45 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-# include <iostream>
-# include <string>
-
-class Fixed
-{
-private:
-    int fixe;
-    static const int fractp = 8;
-public:
-    Fixed();
-    Fixed(const Fixed& f);
-    Fixed& operator=(const Fixed& f);
-    ~Fixed();
-    int getRawBits( void ) const;
-    void setRawBite(int const raw);
-};
-
-#endif
