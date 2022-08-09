@@ -6,14 +6,14 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 19:00:44 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/30 13:16:25 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/01 09:57:35 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 int main( void ) {
-    Fixed const b( 4194304 );
+    Fixed const b( 85 );
     // Fixed const c( 42.42f );
     // Fixed const d( b );
     

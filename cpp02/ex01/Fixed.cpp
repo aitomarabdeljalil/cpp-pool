@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:32:43 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/30 15:37:29 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/01 09:48:56 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,14 @@
 Fixed::Fixed( const int nb )
 {
     std::cout << "Int constructor called" << std::endl;
-    // fixe = nb << fractp;
-    fixe = nb * (1 << 8);
+    fixe = nb * 256;
 }
 
-Fixed::Fixed( const float nb )
-{
-    std::cout << "f constructor called" << std::endl;
-    fixe = roundf(nb / (1 << fractp));
-}
+// Fixed::Fixed( const float nb )
+// {
+//     std::cout << "f constructor called" << std::endl;
+//     fixe = roundf(nb / (1 << fractp));
+// }
 
 int Fixed::toInt( void ) const
 {

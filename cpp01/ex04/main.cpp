@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 11:40:22 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/04 19:07:14 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/09 17:38:39 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ int main(int ac, char **av)
 	std::fstream file;
 	std::fstream fileto;
 	std::string line;
-	int index;
-	int i = 0;
+	size_t index;
 	std::stringstream	buffer;
 	std::string			content;
 
@@ -46,7 +45,7 @@ int main(int ac, char **av)
 		}
 		buffer << file.rdbuf();
 		content = buffer.str();
-		while ((index = (int) content.find(s1)) != std::string::npos)
+		while ((index = content.find(s1)) != std::string::npos)
 		{
 			content.erase(index, s1.length());
 			content.insert(index, s2);
