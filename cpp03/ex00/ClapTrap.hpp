@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 18:02:56 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/09 17:58:11 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/10 19:16:55 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,20 @@ ClapTrap::ClapTrap(std::string Name)
     Hpoints = 10;
     Epoints = 10;
     AttackDamage = 0;
+}
+
+// ClapTrap::ClapTrap(const ClapTrap& ct)
+// {
+//     this
+// }
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+    this->Name = other.Name;
+    this->Hpoints = other.Hpoints;
+    this->Epoints = other.Epoints;
+    this->AttackDamage = other.AttackDamage;
+    return *this;
 }
 
 void ClapTrap::attack(const std::string& target)
