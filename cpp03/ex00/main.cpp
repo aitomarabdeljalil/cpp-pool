@@ -6,7 +6,19 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 18:01:02 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/29 18:01:03 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/11 14:27:17 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
+
+int main()
+{
+    ClapTrap c1("C1");
+    ClapTrap c2("C2");
+    
+    c1.attack("C2");
+    c2.takeDamage(5);
+    c2.beRepaired(5);
+    return 0;
+}
