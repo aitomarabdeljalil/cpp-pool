@@ -6,19 +6,27 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:57:21 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/12 19:08:56 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:23:23 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string Name)
+ClapTrap::ClapTrap()
 {
     std::cout << "Default constructor called" << std::endl;
+    Hpoints = 10;
+    Epoints = 10;
+    AttackDamage = 0;
+}
+
+ClapTrap::ClapTrap(std::string Name)
+{
+    std::cout << "constructor called" << std::endl;
     this->Name = Name;
-    Hpoints = 100;
-    Epoints = 50;
-    AttackDamage = 20;
+    Hpoints = 10;
+    Epoints = 10;
+    AttackDamage = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& ct)

@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 17:22:39 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/12 19:12:38 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:19:45 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class ScavTrap : ClapTrap
+class ScavTrap : public ClapTrap
 {
-private:
-    /* data */
 public:
-    ScavTrap(/* args */);
+    ScavTrap(std::string Name);
     ~ScavTrap();
+    void attack(const std::string& target);
     void guardGate();
 };
 
@@ -31,13 +30,16 @@ void ScavTrap::guardGate()
     
 }
 
-ScavTrap::ScavTrap(/* args */)
+ScavTrap::ScavTrap(std::string Name)
 {
+    this->Name = Name;
+    this->Hpoints = 100;
+    this->Epoints = 50;
+    this->AttackDamage = 20;
 }
 
 ScavTrap::~ScavTrap()
 {
 }
-
 
 #endif
