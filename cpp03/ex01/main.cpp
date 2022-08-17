@@ -6,7 +6,19 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:22:29 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/11 15:22:30 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:52:34 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ScavTrap.hpp"
+
+int main( void )
+{
+    ScavTrap s1("S1");
+    ScavTrap s2("S2");
+    
+    s1.attack("S2");
+    s2.takeDamage(5);
+    s2.beRepaired(5);
+    return 0;
+}

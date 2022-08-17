@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:57:21 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/15 16:23:23 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:14:13 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap Default constructor called" << std::endl;
     Hpoints = 10;
     Epoints = 10;
     AttackDamage = 0;
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string Name)
 {
-    std::cout << "constructor called" << std::endl;
+    std::cout << "ClapTrap Constructor called" << std::endl;
     this->Name = Name;
     Hpoints = 10;
     Epoints = 10;
@@ -82,5 +82,5 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap Destructor called" << std::endl;
 }

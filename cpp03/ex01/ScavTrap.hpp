@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 17:22:39 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/15 16:19:45 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/17 19:46:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,13 @@
 class ScavTrap : public ClapTrap
 {
 public:
+	ScavTrap();
     ScavTrap(std::string Name);
-    ~ScavTrap();
+    ScavTrap(const ScavTrap& st);
+    ScavTrap& operator=(const ScavTrap &other);
     void attack(const std::string& target);
     void guardGate();
+    ~ScavTrap();
 };
-
-void ScavTrap::guardGate()
-{
-    
-}
-
-ScavTrap::ScavTrap(std::string Name)
-{
-    this->Name = Name;
-    this->Hpoints = 100;
-    this->Epoints = 50;
-    this->AttackDamage = 20;
-}
-
-ScavTrap::~ScavTrap()
-{
-}
 
 #endif
