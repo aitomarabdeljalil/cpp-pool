@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 18:33:49 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/20 19:20:00 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/07/29 18:02:56 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/15 16:22:34 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 # include <iostream>
 # include <string>
-# include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class ClapTrap
 {
+protected:
+    std::string Name;
+    int         Hpoints;
+    int         Epoints;
+    int         AttackDamage;
 public:
-    FragTrap();
-    FragTrap(std::string Name);
-    FragTrap(const FragTrap& ft);
-    FragTrap& operator=(const FragTrap &other);
-    void highFivesGuys( void );
-    ~FragTrap();
+    ClapTrap();
+    ClapTrap(std::string Name);
+    ClapTrap(const ClapTrap& ct);
+    ClapTrap& operator=(const ClapTrap &other);
+    void attack(const std::string& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
+    ~ClapTrap();
 };
 
 #endif
