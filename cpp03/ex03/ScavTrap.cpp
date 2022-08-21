@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 19:46:09 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/17 19:46:47 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/21 18:19:36 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << this->Name << " is now in Gate keeper mode." << std::endl;
 }
+
+int ScavTrap::getEnergyP() const { return this->energyP; };
 
 void ScavTrap::attack(const std::string& target)
 {
@@ -32,7 +34,7 @@ ScavTrap::ScavTrap()
 	std::cout << "ScavTrap Default constructor called" << std::endl;
     this->Name = "";
     this->Hpoints = 100;
-    this->Epoints = 50;
+    this->Epoints = energyP = 50;
     this->AttackDamage = 20;
 }
 
@@ -41,7 +43,7 @@ ScavTrap::ScavTrap(std::string Name)
 	std::cout << "ScavTrap Constructor called" << std::endl;
     this->Name = Name;
     this->Hpoints = 100;
-    this->Epoints = 50;
+    this->Epoints = energyP = 50;
     this->AttackDamage = 20;
 }
 

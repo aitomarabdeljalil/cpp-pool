@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 18:33:49 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/21 14:07:18 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/21 19:34:05 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/21 19:34:34 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-# include <iostream>
-# include <string>
-# include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
-class FragTrap : virtual public ClapTrap
+int main()
 {
-public:
-    FragTrap();
-    FragTrap(std::string Name);
-    FragTrap(const FragTrap& ft);
-    FragTrap& operator=(const FragTrap &other);
-    void highFivesGuys( void );
-    ~FragTrap();
-};
-
-#endif
+    
+    return 0;
+}

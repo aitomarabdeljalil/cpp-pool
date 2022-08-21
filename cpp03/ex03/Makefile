@@ -4,6 +4,7 @@ FLAGS	:= -Wall -Wextra -Werror
 SRC		:= 	main.cpp\
 			ClapTrap.cpp\
 			FragTrap.cpp\
+			ScavTrap.cpp\
 
 OBJ		:= ${patsubst %.cpp, %.o, ${SRC}}
 
@@ -19,5 +20,5 @@ fclean: clean
 
 re: fclean all
 
-$(NAME): ClapTrap.hpp FragTrap.hpp $(SRC)
+$(NAME): ClapTrap.hpp ScavTrap.hpp FragTrap.hpp $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)

@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 17:22:39 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/21 17:51:05 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/21 19:59:05 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/21 20:03:37 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 # include <iostream>
 # include <string>
-# include "ClapTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap
+class Animal
 {
 private:
-    int energyP;
+    std::string type;
 public:
-	ScavTrap();
-    ScavTrap(std::string Name);
-    ScavTrap(const ScavTrap& st);
-    ScavTrap& operator=(const ScavTrap &other);
-    void attack(const std::string& target);
-    void guardGate();
-    int getEnergyP() const;
-    ~ScavTrap();
+    Animal();
+    ~Animal();
 };
+
+Animal::Animal()
+{
+    std::cout << "Animal Default Constructor called." << std::endl;
+}
+
+Animal::~Animal()
+{
+    std::cout << "Animal Default Destructor called." << std::endl;
+}
+
 
 #endif
