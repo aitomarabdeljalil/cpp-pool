@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 20:14:40 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/22 18:52:32 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/22 18:52:04 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/22 18:52:35 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include <iostream>
-# include <string>
-# include "Animal.hpp"
+#include "Cat.hpp"
 
-class Cat : public Animal
+Cat::Cat()
 {
-public:
-    Cat();
-    void makeSound() const;
-    ~Cat();
-};
+    this->type = "Cat";
+    std::cout << "Cat Default Constructor called." << std::endl;
+}
 
-#endif
+void Cat::makeSound() const
+{
+    std::cout << "Meow, meow." << std::endl;
+}
+
+Cat::~Cat()
+{
+    std::cout << "Cat Default Destructor called." << std::endl;
+}
