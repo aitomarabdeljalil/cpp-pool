@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 11:07:01 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/24 17:39:10 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/21 20:14:40 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/23 14:39:19 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 # include <iostream>
 # include <string>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Brain
+class Cat : public Animal
 {
 private:
-    std::string ideas[100];
+    Brain* br;
 public:
-    Brain();
-    std::string& operator[] (int i)
-    {
-        return ideas[i];
-    };
-    ~Brain();
+    Cat();
+    void makeSound() const;
+    ~Cat();
 };
-
-Brain::Brain()
-{
-    std::cout << "Brain Default Constructor called." << std::endl;
-}
-
-
-
-Brain::~Brain()
-{
-    std::cout << "Brain Default Destructor called." << std::endl;
-}
-
 
 #endif

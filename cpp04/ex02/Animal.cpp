@@ -1,44 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 11:07:01 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/24 17:39:10 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/22 18:50:21 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/24 17:34:36 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
-# include <iostream>
-# include <string>
+#include "Animal.hpp"
 
-class Brain
+Animal::Animal()
 {
-private:
-    std::string ideas[100];
-public:
-    Brain();
-    std::string& operator[] (int i)
-    {
-        return ideas[i];
-    };
-    ~Brain();
-};
-
-Brain::Brain()
-{
-    std::cout << "Brain Default Constructor called." << std::endl;
+    std::cout << "Animal Default Constructor called." << std::endl;
 }
 
+std::string Animal::getType() const  { return this->type; }
 
-
-Brain::~Brain()
+Animal::~Animal()
 {
-    std::cout << "Brain Default Destructor called." << std::endl;
+    std::cout << "Animal Default Destructor called." << std::endl;
 }
-
-
-#endif

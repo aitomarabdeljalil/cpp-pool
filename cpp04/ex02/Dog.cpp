@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 11:07:01 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/24 17:39:10 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/23 14:41:22 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/23 14:43:29 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
-# include <iostream>
-# include <string>
+#include "Dog.hpp"
 
-class Brain
+Dog::Dog()
 {
-private:
-    std::string ideas[100];
-public:
-    Brain();
-    std::string& operator[] (int i)
-    {
-        return ideas[i];
-    };
-    ~Brain();
-};
-
-Brain::Brain()
-{
-    std::cout << "Brain Default Constructor called." << std::endl;
+    this->type = "Dog";
+    br = new Brain();
+    std::cout << "Dog Default Constructor called." << std::endl;
 }
 
-
-
-Brain::~Brain()
+void Dog::makeSound() const
 {
-    std::cout << "Brain Default Destructor called." << std::endl;
+    std::cout << "woof, woof." << std::endl;
 }
 
-
-#endif
+Dog::~Dog()
+{
+    delete br;
+    std::cout << "Dog Default Destructor called." << std::endl;
+}

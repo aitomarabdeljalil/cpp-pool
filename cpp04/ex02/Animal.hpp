@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 11:07:01 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/24 17:39:10 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/21 19:59:05 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/24 17:33:49 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 # include <iostream>
 # include <string>
 
-class Brain
+class Animal
 {
-private:
-    std::string ideas[100];
+protected:
+    std::string type;
 public:
-    Brain();
-    std::string& operator[] (int i)
-    {
-        return ideas[i];
-    };
-    ~Brain();
+    Animal();
+    virtual void makeSound() const = 0;
+    std::string getType() const;
+    ~Animal();
 };
-
-Brain::Brain()
-{
-    std::cout << "Brain Default Constructor called." << std::endl;
-}
-
-
-
-Brain::~Brain()
-{
-    std::cout << "Brain Default Destructor called." << std::endl;
-}
-
 
 #endif

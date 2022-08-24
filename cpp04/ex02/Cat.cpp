@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/23 11:07:01 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/24 17:39:10 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/22 18:52:04 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/23 14:43:47 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
-# include <iostream>
-# include <string>
+#include "Cat.hpp"
 
-class Brain
+Cat::Cat()
 {
-private:
-    std::string ideas[100];
-public:
-    Brain();
-    std::string& operator[] (int i)
-    {
-        return ideas[i];
-    };
-    ~Brain();
-};
-
-Brain::Brain()
-{
-    std::cout << "Brain Default Constructor called." << std::endl;
+    this->type = "Cat";
+    br = new Brain();
+    std::cout << "Cat Default Constructor called." << std::endl;
 }
 
-
-
-Brain::~Brain()
+void Cat::makeSound() const
 {
-    std::cout << "Brain Default Destructor called." << std::endl;
+    std::cout << "Meow, meow." << std::endl;
 }
 
-
-#endif
+Cat::~Cat()
+{
+    delete br;
+    std::cout << "Cat Default Destructor called." << std::endl;
+}
