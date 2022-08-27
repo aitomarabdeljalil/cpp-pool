@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 16:00:05 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/27 12:45:14 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/27 15:21:02 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/27 18:06:27 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 # include <iostream>
 # include <string>
-# include "AMateria.hpp"
 
-class Ice : public AMateria
+class Bureaucrat
 {
+private:
+    std::string _name;
+    unsigned int _grade;
 public:
-    Ice();
-    AMateria* clone() const;
-    void use(ICharacter& target);
-    ~Ice();
+    Bureaucrat(/* args */);
+    ~Bureaucrat();
 };
 
-Ice::Ice() : AMateria("ice") {}
-
-AMateria* Ice::clone() const
+Bureaucrat::Bureaucrat(/* args */)
 {
-    AMateria *obj = new Ice();
-    return obj;
 }
 
-void Ice::use(ICharacter& target)
-{
-    std::cout << "* shoots an ice bolt at " << target << " *" << std::endl;
-}
-
-Ice::~Ice()
+Bureaucrat::~Bureaucrat()
 {
 }
 

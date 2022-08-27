@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 16:00:05 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/27 12:45:14 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/27 13:08:46 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/27 13:13:15 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 # include <iostream>
 # include <string>
-# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
-class Ice : public AMateria
+class Character : public ICharacter
 {
+private:
+    /* data */
 public:
-    Ice();
-    AMateria* clone() const;
-    void use(ICharacter& target);
-    ~Ice();
+    Character(/* args */);
+    ~Character();
 };
 
-Ice::Ice() : AMateria("ice") {}
-
-AMateria* Ice::clone() const
+Character::Character(/* args */)
 {
-    AMateria *obj = new Ice();
-    return obj;
 }
 
-void Ice::use(ICharacter& target)
-{
-    std::cout << "* shoots an ice bolt at " << target << " *" << std::endl;
-}
-
-Ice::~Ice()
+Character::~Character()
 {
 }
 

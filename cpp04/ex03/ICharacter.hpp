@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 16:00:05 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/27 12:45:14 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/27 12:47:04 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/27 12:57:57 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
 
-class Ice : public AMateria
+class ICharacter
 {
 public:
-    Ice();
-    AMateria* clone() const;
-    void use(ICharacter& target);
-    ~Ice();
+    virtual ~ICharacter() {};
+    virtual std::string const & getName() const = 0;
+    virtual void equip(AMateria* m) = 0;
+    virtual void unequip(int idx) = 0;
+    virtual void use(int idx, ICharacter& target) = 0;
 };
-
-Ice::Ice() : AMateria("ice") {}
-
-AMateria* Ice::clone() const
-{
-    AMateria *obj = new Ice();
-    return obj;
-}
-
-void Ice::use(ICharacter& target)
-{
-    std::cout << "* shoots an ice bolt at " << target << " *" << std::endl;
-}
-
-Ice::~Ice()
-{
-}
-
 
 #endif
