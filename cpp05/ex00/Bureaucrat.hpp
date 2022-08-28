@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 15:21:02 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/27 18:06:27 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/28 15:26:06 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,25 @@
 
 class Bureaucrat
 {
-private:
-    std::string _name;
-    unsigned int _grade;
-public:
-    Bureaucrat(/* args */);
-    ~Bureaucrat();
+    private:
+        const std::string _name;
+        int _grade;
+    public:
+        Bureaucrat(std::string Name);
+        ~Bureaucrat();
+        std::string getName() const;
+        class GradeTooHighException : public std::exception
+        {
+            public:
+                
+        };
 };
 
-Bureaucrat::Bureaucrat(/* args */)
+Bureaucrat::Bureaucrat(std::string Name) : _name(Name) {}
+
+std::string Bureaucrat::getName() const
 {
+    return this->_name;
 }
 
 Bureaucrat::~Bureaucrat()
