@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 15:21:02 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/29 14:44:59 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/29 19:24:52 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
     private:
@@ -28,7 +30,7 @@ class Bureaucrat
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
-        
+        void signForm(const Form& fr);
         class GradeTooHighException : public std::exception
         {
             public:

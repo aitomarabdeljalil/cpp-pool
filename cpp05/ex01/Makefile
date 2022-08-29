@@ -1,8 +1,9 @@
-NAME	:= Bureaucrat
+NAME	:= Form
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
 SRC		:= main.cpp\
 			Bureaucrat.cpp\
+			Form.cpp\
 
 OBJ		:= ${patsubst %.cpp, %.o, ${SRC}}
 
@@ -18,5 +19,5 @@ fclean: clean
 
 re: fclean all
 
-$(NAME): Bureaucrat.hpp $(SRC)
+$(NAME): Bureaucrat.hpp Form.hpp $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
