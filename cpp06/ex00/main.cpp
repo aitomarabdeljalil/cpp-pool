@@ -5,24 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 12:19:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/09/12 12:19:48 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/09/13 19:46:44 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/09/13 19:46:45 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
-
-void fun(int *s)
-{
-    *s += 10;
-}
-
-int main()
-{
-    int ar[5] = {1,3,5,6,7};
-    iter(ar, 5, fun);
-    for(int i = 0; i < 5; i++) {
-        std::cout << ar[i] << std::endl;
-    }
-    return 0;
-}

@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 12:19:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/09/12 12:19:48 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/09/13 17:00:40 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/09/15 15:00:19 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#ifndef ITER_HPP
+# define ITER_HPP
+# include <iostream>
+# include <string>
 
-void fun(int *s)
+template <typename T>
+void    iter(T *array, int len, void (*f)(T *))
 {
-    *s += 10;
-}
+    int    i;
 
-int main()
-{
-    int ar[5] = {1,3,5,6,7};
-    iter(ar, 5, fun);
-    for(int i = 0; i < 5; i++) {
-        std::cout << ar[i] << std::endl;
+    i = 0;
+    if (array) {
+        while (i < len) {
+            (f)(array + i);
+            i++;
+        }
     }
-    return 0;
 }
+
+void fun(int *s);
+
+#endif
