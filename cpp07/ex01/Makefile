@@ -1,4 +1,4 @@
-NAME	:= whatever
+NAME	:= iter
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror
 SRC 	:= 	main.cpp\
@@ -17,5 +17,5 @@ fclean : clean
 
 re : fclean all
 
-$(NAME) : whatever.hpp $(OBJ)
+$(NAME) : iter.hpp $(OBJ)
 	${CC} ${FLAGS} ${OBJ} -o ${NAME}
