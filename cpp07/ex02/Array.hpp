@@ -1,68 +1,77 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Araay.hpp                                          :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:22:15 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/03 18:46:21 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:55:18 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
-# define ARRAU_HPP
+# define ARRAY_HPP
 # include <iostream>
 
 template <typename T>
-class Araay
+class Array
 {
 private:
-    unsigned int size;
+    unsigned int _size;
     T *myarray;
 public:
-    Araay();
-    Araay(unsigned int n);
+    Array();
+    Array(unsigned int n);
     void setMyarray();
     int size();
     T & operator[](unsigned int i) const;
-    ~Araay();
+    ~Array();
 };
 
 template <typename T>
-Araay<T>::Araay()
+Array<T>::Array()
 {
-    
+    this->size = 0;
+    myarray = NULL;
+    std::cout << "** Default Constructor is called **" << std::endl;
 }
 
 template <typename T>
 T& Array<T>::operator[] (unsigned int i) const
 {
-    if (i > this->size())
-		throw (outOfLimits());	
-    return this->_array[i];
+    if (i < 0 || i > this->size())
+		throw std::length_error("Out of Bounds");	
+    return this->myarray[i];
 }
 
 template <typename T>
-Araay<T>::Araay(unsigned int n)
+Array<T>::Array(unsigned int n)
 {
-    size = n;
-    if (n != 0)
-        myarray = new T[size];
+    _size = n;
+    if (n > 0)
+        myarray = new T[_size];
+    else
+        throw std::length_error("invalid size");
+    std::cout << "** Constructor is called **" << std::endl;
 }
 
 template <typename T>
-void Araay<T>::setMyarray()
+void Array<T>::setMyarray()
 {
-    
+    // for (int i = 0; i < _size; i++)
+    //     ptr[i] = arr[i];
 }
 
 template <typename T>
-int Araay<T>::size() { return size; }
+int Array<T>::size() { return size; }
 
 template <typename T>
-Araay<T>::~Araay()
+Array<T>::~Array()
 {
+    if (this->myarray)
+		delete [] myarray;
+	std::cout << "** Destructor is called **" << std::endl;
 }
 
 #endif
