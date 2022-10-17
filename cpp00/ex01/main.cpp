@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 18:20:07 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/25 18:10:32 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/10 13:27:26 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,6 @@ int main(int ac, char **av)
 		}
 		else
 			std::cout << "Invalid command" << std::endl;
-		// if (std::cin.eof())
-        // 	exit(1);
 		std::cout << "> ";
 	}
 	return 0;

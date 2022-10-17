@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:41:22 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/23 14:43:29 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:14:00 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void Dog::makeSound() const
 
 Dog::~Dog()
 {
-    delete br;
+    delete this->br;
     std::cout << "Dog Default Destructor called." << std::endl;
 }

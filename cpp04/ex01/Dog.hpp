@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 20:13:53 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/23 14:41:11 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:11:40 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 public:
     Dog();
     void makeSound() const;
-    ~Dog();
+    virtual ~Dog();
 };
 
 

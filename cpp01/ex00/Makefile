@@ -1,6 +1,6 @@
 NAME	:= Zombie
 CC		:= c++
-CFLAGE	:= -Wall -Wextra -Werror
+CFLAGE	:= -Wall -Wextra -Werror -std=c++98
 SRC		:= 	main.cpp\
 			newZombie.cpp\
 			randomChump.cpp\

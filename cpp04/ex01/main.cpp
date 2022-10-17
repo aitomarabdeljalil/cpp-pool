@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 12:30:27 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/23 15:40:06 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:14:43 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@
 
 int main(void)
 {
-    Animal anm[2];
-    
-    Brain b;
+    Animal* j = new Dog();
+    Animal* i = new Cat();
+    delete j;//should not create a leak
+    delete i;
 
-    b[0] = "hello";
+    // Dog basic;
+    // {
+    //     Dog tmp = basic;
+    // }
 
-    std::cout << b[0] << std::endl;
-    return (0);
+    return 0;
 }
