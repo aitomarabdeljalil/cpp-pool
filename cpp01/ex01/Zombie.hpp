@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 10:55:05 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/30 11:30:23 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:40:56 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ public:
 	std::string getname();
 };
 
-Zombie* zombieHorde(int N, std::string name);
+Zombie* zombieHorde(size_t N, std::string name);
 #endif

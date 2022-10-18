@@ -6,14 +6,13 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 18:18:11 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/30 11:28:09 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:45:15 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include "Weapon.hpp"
-// #include "HumanA.hpp"
 #include "HumanB.hpp"
 #include "HumanA.hpp"
 

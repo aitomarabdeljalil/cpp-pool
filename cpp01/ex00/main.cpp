@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 10:10:26 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/06/30 13:13:47 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:38:26 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include "Zombie.hpp"
 
-int main(int argc, char const *argv[])
+int main(void)
 {
 	Zombie *z = newZombie("test2");
 	z->announce();

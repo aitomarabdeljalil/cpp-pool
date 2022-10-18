@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 11:40:22 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/09 17:38:39 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:48:59 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int main(int ac, char **av)
 	std::stringstream	buffer;
 	std::string			content;
 
-	fileto.open(filename + ".replace", std::ios::out);
 	if (!fileto)
 		std::cout << "File creation failed" << std::endl;
 	else
@@ -43,6 +42,7 @@ int main(int ac, char **av)
 			std::cout << "Source file cant get open or doesnt exist" << std::endl;
 			return 0;
 		}
+		fileto.open(filename + ".replace", std::ios::out);
 		buffer << file.rdbuf();
 		content = buffer.str();
 		while ((index = content.find(s1)) != std::string::npos)

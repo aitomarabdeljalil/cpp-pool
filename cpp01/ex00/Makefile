@@ -12,6 +12,9 @@ OBJ		:= ${patsubst %.cpp, %.o, ${SRC}}
 
 all : $(NAME)
 
+%.o: %.cpp Zombie.hpp
+	$(CC) $(CFLAGE) -c -o $@ $<
+
 clean :
 	rm -rf $(OBJ)
 
@@ -21,4 +24,4 @@ fclean : clean
 re : fclean all
 
 $(NAME) : Zombie.hpp $(OBJ)
-	${CC} ${CFLAG} ${OBJ} -o ${NAME}
+	${CC} ${CFLAGE} ${OBJ} -o ${NAME}
