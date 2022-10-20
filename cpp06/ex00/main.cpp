@@ -3,83 +3,72 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 19:46:44 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/11 17:47:39 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/10/19 12:48:23 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/10/19 12:48:23 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-size_t ft_strspn(const char *s1, const char *s2)
+void printRes(char c, int n, float f, double d)
 {
-    unsigned int len =0;
-    //return 0 if any one is NULL
-    if((s1 == NULL) || (s2 == NULL))
-        return len;
-    //return s1 char position if found in s2
-    //if not found return NULL
-    while(*s1 && strchr(s2,*s1++))
-        len++;
-    return len;
-}
-
-std::string        getTypeOfData(char * str)
-{
-    if (ft_strspn(str, "0123456789.fE+") == strlen(str) && str[strlen(str) - 1] == 'f' && strchr(str, '.'))
-        return "float";
-    if (ft_strspn(str, "0123456789.E+") == strlen(str) && strchr(str, '.'))
-        return "double";
-    if (ft_strspn(str, "0123456789") == strlen(str))
-        return "int";
-    return "nan";
-}
-
-// bool isChar(char *str)
-// {
-//     if (std::strlen(str) == 1)
-//     {
-//         if (isprint(str[0]))
-//             return true;
-//     }
-//     return false;
-// }
-
-// bool isFloat(char *str)
-// {
-//     int i = 0;
-//     if (str[i] == '-')
-//         i++;
-//     while (str[i] >= '0' && str[i] <= '9')
-
-//     return false;
-// }
-
-/*
-    ./convert 0
-    char: Non displayable
-    int: 0
-    float: 0.0f
-    double: 0.0
-    ./convert nan
-    char: impossible
-    int: impossible
-    float: nanf
-    double: nan
-    ./convert 42.0f
-    char: '*'
-    int: 42
-    float: 42.0f
-    double: 42.0
-    7
-*/
-void printConvert(char *str, std::string type)
-{
-    if (type == "float")
+    if (std::isnan(f) || std::isnan(d) || std::isinf(f) || std::isinf(d))
     {
-        std::cout << "char: " << static_cast<char> ()
+        std::cout << "char: impossible\nint: impossible" << std::endl;
     }
+    else
+    {
+        std::cout << "char: " << (isprint(c)) ? c : "Non displayable" << std::endl;
+        std::cout << "int: " << n << std::endl;
+        if (f - std::floor(f))
+            std::cout << "float: " << f + "f" << std::endl; << "double: " << d << std::endl;
+        else
+            std::cout << "float: " << f + ".0f" << std::endl; << "double: " << d + ".0" << std::endl;
+    }
+}
+
+bool HandelInt(std::string str)
+{
+    int n;
+    size_t idx,
+    n = std::stoi(n, &idx);
+    if (idx != str.size())
+        return false;
+    char c = static_cast<char>(n);
+    float f = static_cast<float>(n);
+    double d = static_cast<double>(n);
+    printRes(c, n, f, d);
+    return true;
+}
+
+bool HandelFloat(std::string str)
+{
+    float f;
+    size_t idx,
+    n = std::stof(f, &idx);
+    if (idx != str.size())
+        return false;
+    char c = static_cast<char>(f);
+    int n = static_cast<int>(f);
+    double d = static_cast<double>(f);
+    printRes(c, n, f, d);
+    return true;
+}
+
+bool HandelDouble(std::string str)
+{
+    double d;
+    size_t idx,
+    n = std::stod(d, &idx);
+    if (idx != str.size())
+        return false;
+    char c = static_cast<char>(d);
+    float f = static_cast<float>(d);
+    int n = static_cast<int>(d);
+    printRes(c, n, f, d);
+    return true;
 }
 
 int main(int ac, char **av)
@@ -90,7 +79,16 @@ int main(int ac, char **av)
         std::cout << "Too much arguments." << std::endl;
     else
     {
-        std::cout << static_cast<char> (0);
+        try
+        {
+            if (HandelInt(av[1]))
+                return 1;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+        
     }
     return 0;
 }
