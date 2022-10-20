@@ -3,70 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 12:48:23 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/19 12:48:23 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/20 22:17:19 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cmath>
 
 void printRes(char c, int n, float f, double d)
 {
     if (std::isnan(f) || std::isnan(d) || std::isinf(f) || std::isinf(d))
-    {
-        std::cout << "char: impossible\nint: impossible" << std::endl;
-    }
+        std::cout << "char: impossible\nint: impossible\nfloat: "<< f <<"f\ndouble: "<< d << std::endl;
     else
     {
-        std::cout << "char: " << (isprint(c)) ? c : "Non displayable" << std::endl;
-        std::cout << "int: " << n << std::endl;
-        if (f - std::floor(f))
-            std::cout << "float: " << f + "f" << std::endl; << "double: " << d << std::endl;
+        if (isprint(c))
+            std::cout << "char: '" << c << "'" << std::endl;
         else
-            std::cout << "float: " << f + ".0f" << std::endl; << "double: " << d + ".0" << std::endl;
+            std::cout << "char: Non displayable" << std::endl;
+        std::cout << "int: " << n << std::endl;
+        if (f - floor(f) != 0)
+            std::cout << "float: " << f << "f" << std::endl << "double: " << d << std::endl;
+
+        else
+            std::cout << "float: " << f << ".0f" << std::endl << "double: " << d << ".0" << std::endl;
     }
 }
 
-bool HandelInt(std::string str)
+bool HandelInt(char *str)
 {
-    int n;
-    size_t idx,
-    n = std::stoi(n, &idx);
-    if (idx != str.size())
-        return false;
-    char c = static_cast<char>(n);
-    float f = static_cast<float>(n);
-    double d = static_cast<double>(n);
-    printRes(c, n, f, d);
-    return true;
-}
-
-bool HandelFloat(std::string str)
-{
-    float f;
-    size_t idx,
-    n = std::stof(f, &idx);
-    if (idx != str.size())
-        return false;
-    char c = static_cast<char>(f);
-    int n = static_cast<int>(f);
-    double d = static_cast<double>(f);
-    printRes(c, n, f, d);
-    return true;
-}
-
-bool HandelDouble(std::string str)
-{
-    double d;
-    size_t idx,
-    n = std::stod(d, &idx);
-    if (idx != str.size())
-        return false;
-    char c = static_cast<char>(d);
-    float f = static_cast<float>(d);
-    int n = static_cast<int>(d);
+    double _tocast = atof(str);
+    char c = static_cast<char>(_tocast);
+    int n = static_cast<int>(_tocast);
+    float f = static_cast<float>(_tocast);
+    double d = static_cast<double>(_tocast);
     printRes(c, n, f, d);
     return true;
 }
