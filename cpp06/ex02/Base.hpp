@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:44:03 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/21 21:35:55 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/22 18:33:13 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 class Base
 {
 public:
-    virtual ~Base();
+    virtual ~Base(){};
 };
 
-
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
 
 #endif

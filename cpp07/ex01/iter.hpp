@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:00:40 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/03 11:42:01 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/22 18:42:52 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define ITER_HPP
 # include <iostream>
 # include <string>
-
-// template <typename T>
-// void print( T const & x ) 
-// { 
-//     std::cout << x << std::endl; return; 
-// }
 
 template <class T>
 void    iter(T *array, int len, void (*f)(T const &))

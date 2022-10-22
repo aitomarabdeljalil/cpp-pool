@@ -6,11 +6,18 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 19:14:39 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/21 20:42:48 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/22 18:41:49 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Base.hpp"
+
 int main(void)
 {
-    
+    Base *ptr = new Base();
+    Base &ref = *ptr;
+
+    identify(ptr);
+    identify(ref);
+    return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 11:24:58 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/09/12 11:24:58 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/22 18:42:42 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,13 @@ void swap(T& a, T& b)
 template <typename T>
 T min(T a, T b)
 {
-    if (a < b)
-        return a;
-    else
-        return b;
+    return a < b ? a : b;
 }
 
 template <typename T>
 T max(T a, T b)
 {
-    if (a > b)
-        return a;
-    else
-        return b;
+    return a > b ? a : b;
 }
 
 #endif
