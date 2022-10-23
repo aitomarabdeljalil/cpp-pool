@@ -1,16 +1,24 @@
 NAME	:= PTRREF
 CC		:= c++
-FLAGS	:= -Wall -Wextra -Werror
+CFLAGE	:= -Wall -Wextra -Werror
 SRC		:= main.cpp
+OBJ		:= ${patsubst %.cpp, %.o, ${SRC}}
 
 .PHONY: all re clean
 
+
 all: $(NAME)
 
-fclean:
+clean:
+	rm -rf $(OBJ)
+
+fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
 
-$(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+%.o: %.cpp
+	$(CC) $(CFLAGE) -c -o $@ $<
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGE) $(OBJ) -o $(NAME)

@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 11:40:22 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/18 12:48:59 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/23 12:58:09 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main(int ac, char **av)
 		fileto.open(filename + ".replace", std::ios::out);
 		buffer << file.rdbuf();
 		content = buffer.str();
-		while ((index = content.find(s1)) != std::string::npos)
+		while ((index = content.find(s1)) != std::string::npos && s1 != s2)
 		{
 			content.erase(index, s1.length());
 			content.insert(index, s2);
