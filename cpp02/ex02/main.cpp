@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 11:46:11 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/24 12:32:21 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/07/28 19:00:44 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/10/24 20:45:11 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-# include <iostream>
-# include <string>
+#include "Fixed.hpp"
 
-class Fixed
+int main( void ) 
 {
-private:
-    int fixe;
-    static const int fractp;
-public:
-    Fixed();
-    Fixed(const Fixed& f);
-    Fixed& operator=(const Fixed& f);
-    ~Fixed();
-    int getRawBits( void ) const;
-    void setRawBite(int const raw);
-};
+    Fixed a(2);
+    Fixed b( Fixed( 5.05f ) * Fixed( 2 ) );
+    // std::cout << a << std::endl;
+    // std::cout << ++a << std::endl;
+    // std::cout << a << std::endl;
+    // std::cout << a++ << std::endl;
+    // std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    std::cout << Fixed::min( a, b ) << std::endl;
+    return 0;
+}
 
-#endif

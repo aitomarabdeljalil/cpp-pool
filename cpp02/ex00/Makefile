@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/24 12:35:09 by aait-oma          #+#    #+#              #
+#    Updated: 2022/10/24 12:37:17 by aait-oma         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	:= Fixed
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror
@@ -18,5 +30,8 @@ fclean: clean
 
 re: fclean all
 
-$(NAME): Fixed.hpp $(SRC)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+%.o: %.cpp
+	$(CC) $(FLAGS) -c -o $@ $<
+
+$(NAME): Fixed.hpp $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

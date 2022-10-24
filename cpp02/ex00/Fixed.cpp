@@ -6,11 +6,13 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:21:12 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/28 18:22:15 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:33:07 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::fractp = 8;
 
 Fixed::Fixed()
 {
