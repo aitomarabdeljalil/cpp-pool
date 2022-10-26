@@ -12,5 +12,8 @@ fclean:
 
 re: fclean all
 
-$(NAME): $(SRC)
+%.o: %.cpp
+	$(CC) $(FLAGE) -c -o $@ $<
+
+$(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)

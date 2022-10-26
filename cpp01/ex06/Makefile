@@ -19,4 +19,4 @@ fclean: clean
 re: fclean all
 
 $(NAME): Harl.hpp $(OBJ)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

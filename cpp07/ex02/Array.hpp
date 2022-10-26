@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:22:15 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/06 17:33:22 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:38:13 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ Array<T>::Array(int n)
 {
     std::cout << "** Constructor is called **" << std::endl;
     _size = n;
-    myarray = n > 0 ? new T[_size] : throw std::length_error("invalid size");
+    myarray = n > 0 ? new T[_size]() : throw std::length_error("invalid size");
 }
 
 // template <typename T>

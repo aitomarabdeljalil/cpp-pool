@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 18:27:53 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/02 19:14:43 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/26 13:40:37 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Weapon
 	public:
 		Weapon();
 		Weapon(std::string type);
-		std::string getType();
+		std::string getType() const;
 		void setType(std::string type);
 };
 

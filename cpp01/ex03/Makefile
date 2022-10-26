@@ -20,5 +20,8 @@ fclean : clean
 
 re : fclean all
 
+%.o: %.cpp HumanA.hpp HumanB.hpp Weapon.hpp
+	$(CC) $(CFLAGE) -c -o $@ $<
+
 $(NAME) : Weapon.hpp HumanA.hpp HumanB.hpp $(OBJ)
-	${CC} ${CFLAG} ${OBJ} -o ${NAME}
+	${CC} ${CFLAGE} ${OBJ} -o ${NAME}

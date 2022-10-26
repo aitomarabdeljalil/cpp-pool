@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 18:31:46 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/07/02 19:15:07 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/26 13:41:21 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ Weapon::Weapon(std::string type)
 	this->type = type;
 }
 
-std::string Weapon::getType()
+std::string Weapon::getType() const
 {
-	return (type);
+	return (this->type);
 }
-void Weapon::setType(std::string type)
+void Weapon::setType(std::string _type)
 {
-	this->type = type;
+	this->type = _type;
 }
