@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:32:43 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/24 21:49:42 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/27 22:53:28 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,16 @@ const int Fixed::fractp = 8;
 
 Fixed::Fixed()
 {
-    // std::cout << "Default constructor called" << std::endl;
     fixe = 0;
 }
 
 Fixed::Fixed( const int nb )
 {
-    // std::cout << "Int constructor called" << std::endl;
     fixe = nb * (1 << this->fractp);
 }
 
 Fixed::Fixed( const float nb )
 {
-    // std::cout << "Float constructor called" << std::endl;
     fixe = (round(nb * (1 << fractp)));
 }
 
@@ -47,7 +44,6 @@ float Fixed::toFloat( void ) const
 
 int Fixed::getRawBits() const
 {
-    // std::cout << "getRawBits member function called" << std::endl;
     return this->fixe;
 }
 
@@ -57,7 +53,7 @@ std::ostream& operator<< (std::ostream& os, const Fixed& fixed)
     return os;
 }
 
-Fixed &Fixed::operator=(const Fixed &other)
+Fixed &Fixed::operator=(const Fixed& other)
 {
     // std::cout << "Copy assignment operator called" << std::endl;
     if(this != &other)
@@ -65,15 +61,83 @@ Fixed &Fixed::operator=(const Fixed &other)
     return *this;   
 }
 
-Fixed Fixed::operator+(const Fixed &f)
+/* arithmetic operators */
+Fixed Fixed::operator+(const Fixed &other)
 {
-    return this->toFloat() + f.toFloat();
+    return this->toFloat() + other.toFloat();
 }
 
-Fixed Fixed::operator*(const Fixed& f2)
+Fixed Fixed::operator-(const Fixed &other)
 {
-    return this->toFloat() * f2.toFloat();
+    return this->toFloat() - other.toFloat();
 }
+
+Fixed Fixed::operator*(const Fixed& other)
+{
+    return this->toFloat() * other.toFloat();
+}
+
+Fixed Fixed::operator/(const Fixed& other)
+{
+    return this->toFloat() / other.toFloat();
+}
+/* increment/decrement */
+Fixed& Fixed::operator++(void)
+{
+    this->fixe++;
+    return (*this);
+}
+
+Fixed& Fixed::operator--(void)
+{
+    this->fixe--;
+    return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+    Fixed tmp = (*this);
+    this->fixe++;
+    return(tmp);
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed tmp = (*this);
+    this->fixe--;
+    return(tmp);
+}
+/*  comparison operators */
+bool Fixed::operator==(Fixed const &f1) const
+{
+    return(this->fixe == f1.fixe);
+}
+
+bool Fixed::operator!=(Fixed const &f1) const
+{
+    return(this->fixe != f1.fixe);
+}
+
+bool Fixed::operator>=(Fixed const &f1) const
+{
+    return(this->fixe >= f1.fixe);
+}
+
+bool Fixed::operator<=(Fixed const &f1) const
+{
+    return(this->fixe <= f1.fixe);
+}
+
+bool Fixed::operator>(Fixed const &f1) const
+{
+    return(this->fixe > f1.fixe);
+}
+
+bool Fixed::operator<(Fixed const &f1) const
+{
+    return(this->fixe < f1.fixe);
+}
+
 
 void Fixed::setRawBite(int const raw)
 {
@@ -82,11 +146,9 @@ void Fixed::setRawBite(int const raw)
 
 Fixed::Fixed(const Fixed& f)
 {
-    // std::cout << "Copy constructor called" << std::endl;
     fixe = f.getRawBits();
 }
 
 Fixed::~Fixed()
 {
-    // std::cout << "Destructor called" << std::endl;
 }

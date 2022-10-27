@@ -1,8 +1,10 @@
-NAME	:= Fixed
+NAME	:= bsp
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror
 SRC		:= 	main.cpp\
 			Fixed.cpp\
+			Point.cpp\
+			bsp.cpp\
 
 OBJ		:= ${patsubst %.cpp, %.o, ${SRC}}
 
@@ -21,5 +23,5 @@ re: fclean all
 %.o: %.cpp
 	$(CC) $(FLAGS) -c -o $@ $<
 
-$(NAME): Fixed.hpp $(OBJ)
+$(NAME): Fixed.hpp Point.hpp  $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

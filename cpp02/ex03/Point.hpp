@@ -6,13 +6,14 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 21:52:21 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/26 19:09:07 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:18:33 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef POINT_HPP
 # define POINT_HPP
 # include "Fixed.hpp"
+# include <iostream>
 
 class Point
 {
@@ -22,23 +23,14 @@ private:
 public:
     Point();
     Point(const float _x, const float _y);
-    Point(Point& _point);
+    Point(const Point& _point);
+    float getX(void) const;
+    float getY(void) const;
     Point& operator=(const Point& _point);
     ~Point();
 };
 
-Point::Point() : x(0.0f), y(0.0f) {}
-
-Point::Point(const float _x, const float _y) : x(_x), y(_y) {}
-
-Point::Point(Point& _point) : x(_point.x), y(_point.y) {}
-
-Point & Point::operator= (const Point& _point)
-{
-	this->_fixed = _point._fixed;
-	return (*this);
-}
-
-Point::~Point() {}
+float cal_det(Point a, Point b, Point  c);
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

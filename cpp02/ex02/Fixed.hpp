@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:32:43 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/24 21:01:17 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/27 22:23:53 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,23 @@ public:
     Fixed( const float nb );
     static Fixed& min(Fixed& f, Fixed& g);
     static Fixed& max(Fixed& f, Fixed& g);
-    static Fixed& min(Fixed& const f, Fixed& const g);
-    static Fixed& max(Fixed& const f, Fixed& const g);
-    Fixed& operator=(const Fixed&);
-    Fixed operator+(const Fixed  &);
-    Fixed operator*(const Fixed&);
+    static Fixed const & min(const Fixed&  f, const Fixed&  g);
+    static Fixed const & max(const Fixed& f, const  Fixed&  g);
+    Fixed& operator=(const Fixed& other);
+    Fixed operator+(const Fixed& other);
+    Fixed operator*(const Fixed& other);
+    Fixed operator/(const Fixed& other);
+    Fixed operator-(const Fixed& other);
+    Fixed& operator++(void);
+    Fixed operator++(int);
+    Fixed& operator--(void);
+    Fixed operator--(int);
+    bool operator==(Fixed const &f1) const;
+    bool operator!=(Fixed const &f1) const;
+    bool operator>=(Fixed const &f1) const;
+    bool operator<=(Fixed const &f1) const;
+    bool operator>(Fixed const &f1) const;
+    bool operator<(Fixed const &f1) const;
     int getRawBits( void ) const;
     void setRawBite( int const raw );
     float toFloat( void ) const;
