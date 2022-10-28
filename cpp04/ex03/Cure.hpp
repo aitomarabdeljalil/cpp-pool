@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 16:00:05 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/28 21:24:30 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/10/28 21:25:20 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/10/28 21:36:16 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 # include <iostream>
 # include <string>
 # include "AMateria.hpp"
 # include "ICharacter.hpp"
 
-class Ice : public AMateria
+class Cure : public AMateria
 {
 public:
-    Ice();
+    Cure();
     AMateria* clone() const;
     void use(ICharacter& target);
-    ~Ice();
+    ~Cure();
 };
 
-Ice::Ice() : AMateria("ice") {}
+Cure::Cure() : AMateria("cure") {}
 
-AMateria* Ice::clone() const
+AMateria* Cure::clone() const
 {
-    AMateria *obj = new Ice();
+    AMateria *obj = new Cure();
     return obj;
 }
 
-void Ice::use(ICharacter& target)
+void Cure::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+    std::cout << "* heals " << target.getName() << "'s wound *" << std::endl;
 }
 
-Ice::~Ice() {}
+Cure::~Cure() {}
+
 
 #endif

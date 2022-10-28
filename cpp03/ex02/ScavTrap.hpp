@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 16:00:05 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/28 21:24:30 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/08/12 17:22:39 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/08/17 19:46:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 # include <iostream>
 # include <string>
-# include "AMateria.hpp"
-# include "ICharacter.hpp"
+# include "ClapTrap.hpp"
 
-class Ice : public AMateria
+class ScavTrap : public ClapTrap
 {
 public:
-    Ice();
-    AMateria* clone() const;
-    void use(ICharacter& target);
-    ~Ice();
+	ScavTrap();
+    ScavTrap(std::string Name);
+    ScavTrap(const ScavTrap& st);
+    ScavTrap& operator=(const ScavTrap &other);
+    void attack(const std::string& target);
+    void guardGate();
+    ~ScavTrap();
 };
-
-Ice::Ice() : AMateria("ice") {}
-
-AMateria* Ice::clone() const
-{
-    AMateria *obj = new Ice();
-    return obj;
-}
-
-void Ice::use(ICharacter& target)
-{
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-}
-
-Ice::~Ice() {}
 
 #endif

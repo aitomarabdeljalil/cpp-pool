@@ -19,5 +19,8 @@ fclean: clean
 
 re: fclean all
 
-$(NAME): ClapTrap.hpp FragTrap.hpp $(SRC)
+%.o: %.cpp ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
+	$(CC) $(FLAGS) -c -o $@ $<
+
+$(NAME): ClapTrap.hpp FragTrap.hpp ScavTrap.hpp $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)

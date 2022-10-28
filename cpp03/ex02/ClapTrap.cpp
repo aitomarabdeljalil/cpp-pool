@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:57:21 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/20 15:24:39 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/28 15:54:52 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if (this->Hpoints > 0)
     {
-        if (this->Hpoints > amount)
+        if (this->Hpoints > (int)amount)
             this->Hpoints -= amount;
         else
             this->Hpoints = 0;
