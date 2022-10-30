@@ -20,7 +20,7 @@ fclean: clean
 
 re: fclean all
 
-%.o: %.cpp
+%.o: %.cpp Fixed.hpp Point.hpp	
 	$(CC) $(FLAGS) -c -o $@ $<
 
 $(NAME): Fixed.hpp Point.hpp  $(OBJ)

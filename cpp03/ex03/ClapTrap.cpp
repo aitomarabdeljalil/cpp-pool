@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 12:57:21 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/20 15:24:39 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/10/30 20:15:25 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 ClapTrap::ClapTrap()
 {
     std::cout << "ClapTrap Default constructor called" << std::endl;
+    Name = "claptrap default";
     Hpoints = 10;
     Epoints = 10;
     AttackDamage = 0;
@@ -44,6 +45,11 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
     this->Epoints = other.Epoints;
     this->AttackDamage = other.AttackDamage;
     return *this;
+}
+
+std::string ClapTrap::getName()
+{
+    return Name;
 }
 
 void ClapTrap::attack(const std::string& target)
