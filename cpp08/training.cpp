@@ -3,8 +3,7 @@
 
 int main(void)
 {
-    std::vector<int> val;
-    val = { 1, 2, 3, 4, 5 };
+    std::vector<int> val{ 1, 2, 3, 4, 5 };
     for (int i = 0; i < val.size(); i++)
         std::cout << val[i] << std::endl;
     for (int va : val)
