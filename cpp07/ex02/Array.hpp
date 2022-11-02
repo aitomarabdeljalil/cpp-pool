@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:22:15 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/26 19:38:13 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:12:56 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ private:
 public:
     Array();
     Array(int n);
-    // void setMyarray(T *ptr);
-    // void Array<T>::printMyarray();
     int size() const;
     T & operator[](unsigned int i) const;
     ~Array();
@@ -53,13 +51,6 @@ Array<T>::Array(int n)
     _size = n;
     myarray = n > 0 ? new T[_size]() : throw std::length_error("invalid size");
 }
-
-// template <typename T>
-// void Array<T>::setMyarray(T *ptr)
-// {
-//     for (int i = 0; i < this->size(); i++)
-//         myarray[i] = ptr[i];
-// }
 
 template <typename T>
 int Array<T>::size() const { return _size; }
