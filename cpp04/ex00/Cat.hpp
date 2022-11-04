@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 20:14:40 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/22 18:52:32 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:40:32 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class Cat : public Animal
 {
 public:
     Cat();
+    Cat(const Cat& c);
+    Cat& operator=(const Cat& other);
     void makeSound() const;
     ~Cat();
 };
