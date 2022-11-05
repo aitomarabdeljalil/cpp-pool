@@ -25,20 +25,9 @@ public:
     {
         return ideas[i];
     };
+    Brain& operator=(const Brain& other);
+    Brain(const Brain& b),
     ~Brain();
 };
-
-Brain::Brain()
-{
-    std::cout << "Brain Default Constructor called." << std::endl;
-}
-
-
-
-Brain::~Brain()
-{
-    std::cout << "Brain Default Destructor called." << std::endl;
-}
-
 
 #endif

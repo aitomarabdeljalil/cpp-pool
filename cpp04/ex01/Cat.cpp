@@ -19,6 +19,20 @@ Cat::Cat()
     std::cout << "Cat Default Constructor called." << std::endl;
 }
 
+Cat::Cat(const Cat& c)
+{
+    std::cout << "Copy constructor called" << std::endl;
+    this->type = c.getType();
+}
+
+Cat& Cat::operator=(const Cat& other)
+{
+    std::cout << "Copy assignment operator called" << std::endl;
+    if(this != &other)
+        this->type = other.getType();
+    return *this; 
+}
+
 void Cat::makeSound() const
 {
     std::cout << "Meow, meow." << std::endl;
