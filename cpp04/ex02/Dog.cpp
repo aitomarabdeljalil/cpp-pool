@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:41:22 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/23 14:43:29 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/06 20:42:23 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,31 @@
 
 Dog::Dog()
 {
+    std::cout << "Dog Default Constructor called." << std::endl;
     this->type = "Dog";
     br = new Brain();
-    std::cout << "Dog Default Constructor called." << std::endl;
+}
+
+Dog::Dog(const Dog& d)
+{
+    std::cout << "Dog Copy constructor called." << std::endl;
+    this->type = d.getType();
+    if (!br)
+        br = new Brain();
+    *br = *(d.br);
+}
+
+Dog& Dog::operator=(const Dog& other)
+{
+    std::cout << "Dog Copy assignment operator called." << std::endl;
+    if(this != &other)
+    {
+        this->type = other.getType();
+        if (!br)
+            br = new Brain();
+        *br = *(other.br);
+    }
+    return *this; 
 }
 
 void Dog::makeSound() const
@@ -26,6 +48,6 @@ void Dog::makeSound() const
 
 Dog::~Dog()
 {
-    delete br;
+    delete this->br;
     std::cout << "Dog Default Destructor called." << std::endl;
 }

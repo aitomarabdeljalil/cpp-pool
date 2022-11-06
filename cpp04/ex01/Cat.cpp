@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:52:04 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/23 14:43:47 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/06 22:39:40 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 
 Cat::Cat()
 {
-    this->type = "Cat";
-    br = new Brain();
     std::cout << "Cat Default Constructor called." << std::endl;
+    this->type = "Cat";
+    this->br = new Brain();
 }
 
 Cat::Cat(const Cat& c)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Cat Copy constructor called." << std::endl;
     this->type = c.getType();
+    br = new Brain();
+    *br = *c.br;
 }
 
 Cat& Cat::operator=(const Cat& other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
-    if(this != &other)
-        this->type = other.getType();
+    std::cout << "Cat Copy assignment operator called." << std::endl;
+    delete this->br;
+    this->br = new Brain();
+    this->type = other.getType();
+    *br = *other.br;
     return *this; 
 }
 
@@ -40,6 +44,6 @@ void Cat::makeSound() const
 
 Cat::~Cat()
 {
-    delete br;
+    delete this->br;
     std::cout << "Cat Default Destructor called." << std::endl;
 }

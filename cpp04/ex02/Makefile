@@ -24,5 +24,5 @@ re: fclean all
 %.o: %.cpp Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 	$(CC) $(FLAGS) -c -o $@ $<
 
-$(NAME): Animal.hpp Cat.hpp Dog.hpp Brain.hpp $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): Animal.hpp Cat.hpp Dog.hpp Brain.hpp $(SRC)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)

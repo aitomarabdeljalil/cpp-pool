@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/22 18:52:04 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/06 20:41:52 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/11/06 00:03:56 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/11/06 20:46:11 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat()
+Brain::Brain()
 {
-    std::cout << "Cat Default Constructor called." << std::endl;
-    this->type = "Cat";
+    std::cout << "Brain Default Constructor called." << std::endl;
 }
 
-Cat::Cat(const Cat& c)
+Brain::Brain(const Brain& b)
 {
     std::cout << "Copy constructor called" << std::endl;
-    this->type = c.getType();
+    for (int i = 0; i < 100; i++)
+		    this->ideas[i] = b.ideas[i];
 }
 
-Cat& Cat::operator=(const Cat& other)
+Brain& Brain::operator=(const Brain& other)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if(this != &other)
-        this->type = other.getType();
+        for (int i = 0; i < 100; i++)
+		    this->ideas[i] = other.ideas[i];
     return *this; 
 }
 
-void Cat::makeSound() const
+Brain::~Brain()
 {
-    std::cout << "Meow, meow." << std::endl;
-}
-
-Cat::~Cat()
-{
-    std::cout << "Cat Default Destructor called." << std::endl;
+    std::cout << "Brain Default Destructor called." << std::endl;
 }

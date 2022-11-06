@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 00:10:32 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/06 00:10:32 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/06 21:12:06 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ private:
     Brain* br;
 public:
     Dog();
+    Dog(const Dog& d);
+    Dog& operator=(const Dog& other);
     void makeSound() const;
-    virtual ~Dog();
+    ~Dog();
 };
 
 

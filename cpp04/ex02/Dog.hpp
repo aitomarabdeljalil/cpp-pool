@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 20:13:53 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/23 14:41:11 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/11/06 00:10:32 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/11/06 20:27:03 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef DOG_HPP
 # define DOG_HPP
@@ -23,9 +24,12 @@ private:
     Brain* br;
 public:
     Dog();
+    Dog(const Dog& d);
+    Dog& operator=(const Dog& other);
     void makeSound() const;
-    ~Dog();
+    virtual ~Dog();
 };
+
 
 
 #endif

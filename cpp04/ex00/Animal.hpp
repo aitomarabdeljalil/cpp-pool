@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 19:59:05 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/04 16:21:33 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/06 21:12:02 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
     Animal& operator=(const Animal &other);
     virtual void makeSound() const;
     std::string getType() const;
-    ~Animal();
+    virtual ~Animal();
 };
 
 #endif

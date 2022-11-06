@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 19:57:03 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/04 20:17:14 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/06 21:25:12 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
         i1->makeSound();
         meta1->makeSound();   
     }
-
+    std::cout << "--------------------------" << std::endl;
     {
         const Animal* meta2 = new Animal();
         const Animal* j2 = new Dog();
@@ -34,7 +34,9 @@ int main()
         std::cout << i2->getType() << " " << std::endl;
         i2->makeSound(); //will output the cat sound!
         j2->makeSound();
+
         meta2->makeSound();   
     }
+
     return 0;
 }
