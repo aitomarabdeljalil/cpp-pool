@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 15:21:02 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/07 21:07:46 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/29 19:24:52 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,26 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include "Form.hpp"
 
+class Form;
 class Bureaucrat
 {
     private:
         const std::string _name;
         int _grade;
     public:
-        Bureaucrat();
         Bureaucrat(std::string Name, int Grade);
         ~Bureaucrat();
         std::string getName() const;
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
-
+        void signForm(const Form& fr);
         class GradeTooHighException : public std::exception
         {
             public:
-                const char* what() const throw()
+                virtual const char* what() const throw()
                 {
                     return "Grade is Too High!";
                 }
@@ -42,7 +43,7 @@ class Bureaucrat
         class GradeTooLowException : public std::exception
         {
             public:
-                const char* what() const throw()
+                virtual const char* what() const throw()
                 {
                     return "Grade is Too Low!";
                 }

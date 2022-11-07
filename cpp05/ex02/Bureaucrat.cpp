@@ -6,15 +6,12 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:33:38 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/07 21:02:33 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/08/29 19:15:14 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
-Bureaucrat::Bureaucrat()
-{
-}
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string Name, int Grade) : _name(Name)
 {
@@ -47,6 +44,14 @@ void Bureaucrat::decrementGrade()
         this->_grade++;
     else
         throw Bureaucrat::GradeTooLowException();
+}
+
+void Bureaucrat::signForm(const Form& fr)
+{
+    if (fr.getSigned())
+        std::cout << *this << " signed " << fr << std::endl;
+    else
+        std::cout << *this << " couldn’t sign  " << fr << " because his grade is too low." << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& br)
