@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 18:52:04 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/06 20:42:16 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/07 11:31:43 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,24 @@ Cat::Cat()
 {
     std::cout << "Cat Default Constructor called." << std::endl;
     this->type = "Cat";
-    br = new Brain();
+    this->br = new Brain();
 }
 
 Cat::Cat(const Cat& c)
 {
     std::cout << "Cat Copy constructor called." << std::endl;
     this->type = c.getType();
-    if (!br)
-        br = new Brain();
-    *br = *(c.br);
+    br = new Brain();
+    *br = *c.br;
 }
 
 Cat& Cat::operator=(const Cat& other)
 {
     std::cout << "Cat Copy assignment operator called." << std::endl;
-    if(this != &other)
-    {
-        this->type = other.getType();
-        if (!br)
-            br = new Brain();
-        *br = *(other.br);
-    }
+    delete this->br;
+    this->br = new Brain();
+    this->type = other.getType();
+    *br = *other.br;
     return *this; 
 }
 

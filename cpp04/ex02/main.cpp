@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 12:30:27 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/06 21:20:36 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:34:19 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main(void)
 {
-    Animal* j = new Dog();
+    Animal j;
 	Animal* i = new Cat();
 
     delete j;
@@ -27,8 +27,4 @@ int main(void)
         Cat tmp = Basic;
     }
 
-    Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-    for ( int i = 0; i < 4; i++ ) {
-        delete animals[i];
-    }
 }

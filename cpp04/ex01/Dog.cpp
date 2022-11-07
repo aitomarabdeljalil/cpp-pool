@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 14:41:22 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/06 20:42:23 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/07 11:31:37 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,17 @@ Dog::Dog(const Dog& d)
 {
     std::cout << "Dog Copy constructor called." << std::endl;
     this->type = d.getType();
-    if (!br)
-        br = new Brain();
-    *br = *(d.br);
+    br = new Brain();
+    *br = *d.br;
 }
 
 Dog& Dog::operator=(const Dog& other)
 {
     std::cout << "Dog Copy assignment operator called." << std::endl;
-    if(this != &other)
-    {
-        this->type = other.getType();
-        if (!br)
-            br = new Brain();
-        *br = *(other.br);
-    }
+    delete this->br;
+    this->br = new Brain();
+    this->type = other.getType();
+    *br = *other.br;
     return *this; 
 }
 
