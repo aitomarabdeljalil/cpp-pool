@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 21:10:42 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/08 13:57:30 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/11/08 15:04:34 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/11/08 15:31:24 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef PRESIDENTIALPARDONFORM
+# define PRESIDENTIALPARDONFORM
 # include <iostream>
 # include "Form.hpp"
 # include "Bureaucrat.hpp"
-# include <fstream>
 
-class ShrubberyCreationForm : public Form
+class PresidentialPardonForm
 {
 private:
     std::string target;
 public:
-    ShrubberyCreationForm();
-    ShrubberyCreationForm(std::string target);
-    ShrubberyCreationForm(const ShrubberyCreationForm& other);
-    ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
-    ~ShrubberyCreationForm();
-    
-    void execute(Bureaucrat const & executor) const;
+    PresidentialPardonForm();
+    PresidentialPardonForm(std::string target);
+    PresidentialPardonForm(const PresidentialPardonForm& other);
+    PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
+    ~PresidentialPardonForm();
 };
 
 #endif

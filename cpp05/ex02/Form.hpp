@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:58:13 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/07 21:32:46 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:51:36 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,16 @@ class Form
                     return "Grade is Too Low!";
                 }
         };
+
+         class NotSignedException : public std::exception
+        {
+            public:
+                virtual const char* what() const throw()
+                {
+                    return "Form is Not Signed!!";
+                }
+        };
+
 };
 
 std::ostream& operator<<(std::ostream& os, const Form& fr);

@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 15:21:02 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/29 19:24:52 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:18:29 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ class Bureaucrat
         void incrementGrade();
         void decrementGrade();
         void signForm(const Form& fr);
+        void excuteForm(Form const & form);
+
         class GradeTooHighException : public std::exception
         {
             public:

@@ -1,9 +1,7 @@
 NAME	:= Form
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
-SRC		:= main.cpp\
-			Bureaucrat.cpp\
-			Form.cpp\
+SRC		:= Bureaucrat.cpp Form.cpp PresidentialPardon.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJ		:= ${patsubst %.cpp, %.o, ${SRC}}
 
@@ -18,6 +16,9 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+%.o: %.cpp Bureaucrat.hpp Form.hpp PresidentialPardon.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+	$(CC) $(FLAGS) -c -o $@ $<
 
 $(NAME): Bureaucrat.hpp Form.hpp $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
