@@ -18,5 +18,8 @@ fclean: clean
 
 re: fclean all
 
-$(NAME): Bureaucrat.hpp $(SRC)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+%.o: %.cpp Bureaucrat.hpp
+	$(CC) $(FLAGS) -c -o $@ $<
+
+$(NAME): Bureaucrat.hpp $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

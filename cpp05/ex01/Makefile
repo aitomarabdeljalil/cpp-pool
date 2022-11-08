@@ -19,5 +19,8 @@ fclean: clean
 
 re: fclean all
 
-$(NAME): Bureaucrat.hpp Form.hpp $(SRC)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+%.o: %.cpp Bureaucrat.hpp Form.hpp
+	$(CC) $(FLAGS) -c -o $@ $<
+
+$(NAME): Bureaucrat.hpp Form.hpp $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

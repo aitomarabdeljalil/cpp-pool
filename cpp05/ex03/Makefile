@@ -17,8 +17,8 @@ fclean: clean
 
 re: fclean all
 
-%.o: %.cpp Bureaucrat.hpp Form.hpp PresidentialPardon.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+%.o: %.cpp Bureaucrat.hpp Form.hpp PresidentialPardon.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp
 	$(CC) $(FLAGS) -c -o $@ $<
 
-$(NAME): Bureaucrat.hpp Form.hpp PresidentialPardon.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp $(OBJ)
+$(NAME): Bureaucrat.hpp Form.hpp PresidentialPardon.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
