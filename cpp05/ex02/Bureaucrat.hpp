@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 15:21:02 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/08 17:18:29 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:02:47 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@ class Bureaucrat
         int _grade;
     public:
         Bureaucrat(std::string Name, int Grade);
+        Bureaucrat(const Bureaucrat& br);
+        Bureaucrat& operator=(const Bureaucrat& br);
         ~Bureaucrat();
         std::string getName() const;
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
         void signForm(const Form& fr);
-        void excuteForm(Form const & form);
+        void executeForm(Form const & form);
 
         class GradeTooHighException : public std::exception
         {

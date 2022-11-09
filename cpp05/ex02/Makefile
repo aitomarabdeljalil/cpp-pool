@@ -1,7 +1,12 @@
 NAME	:= Form
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
-SRC		:= Bureaucrat.cpp Form.cpp PresidentialPardon.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC		:=  main.cpp\
+			Bureaucrat.cpp\
+			Form.cpp\
+			PresidentialPardonForm.cpp\
+			RobotomyRequestForm.cpp\
+			ShrubberyCreationForm.cpp\
 
 OBJ		:= ${patsubst %.cpp, %.o, ${SRC}}
 
@@ -17,8 +22,8 @@ fclean: clean
 
 re: fclean all
 
-%.o: %.cpp Bureaucrat.hpp Form.hpp PresidentialPardon.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
+%.o: %.cpp Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
 	$(CC) $(FLAGS) -c -o $@ $<
 
-$(NAME): Bureaucrat.hpp Form.hpp PresidentialPardon.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp $(OBJ)
+$(NAME): Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

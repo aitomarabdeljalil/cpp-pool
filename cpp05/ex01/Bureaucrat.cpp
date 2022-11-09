@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:33:38 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/08/29 19:15:14 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:51:25 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,19 @@ Bureaucrat::Bureaucrat(std::string Name, int Grade) : _name(Name)
     }
     else
         _grade = Grade;
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& br)
+{
+    _name = br._name;
+    _grade = br._grade;
+}
+
+Bureaucrat& Bureaucrat::operator==(const Bureaucrat& br)
+{
+    this->_grade = br._grade;
+    this->_name = br._name;
+    return *this;
 }
 
 std::string Bureaucrat::getName() const { return this->_name; }

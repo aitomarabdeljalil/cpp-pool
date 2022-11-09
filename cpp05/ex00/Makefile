@@ -1,4 +1,4 @@
-NAME	:= Bureaucrat
+NAME	:= TheBureaucrat
 CC		:= c++
 FLAGS	:= -Wall -Wextra -Werror -std=c++98
 SRC		:= main.cpp\

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:08:25 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/08 22:08:25 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:41:30 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,5 @@ public:
     Form* makeForm(std::string name, std::string target);
     ~Intern();
 };
-
-Intern::Intern()
-{
-}
-
-Intern::~Intern()
-{
-}
-
-Form* Intern::makeForm(std::string name, std::string target)
-{
-    std::string FormTabName[] = { "robotomy request", "presidential pardon", "shrubbery creation"};
-    form* forms[] = {
-        new ShrubberyCreationForm(target),
-        new RobotomyRequestForm(target),
-        new PresidentialPardonForm(target)
-    };
-    for (int i = 0; i < 3; i++) {
-        if (name == FormTabName[i]) {
-            std::cout << "Intern creates " << name << std::endl;
-            return (forms[i]);
-        }
-    }
-    std::cout << "Intern couldn't create " << name << " form" << std::endl;
-    return (NULL);
-}
 
 #endif
