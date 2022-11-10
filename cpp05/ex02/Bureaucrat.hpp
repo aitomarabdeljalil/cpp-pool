@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 15:21:02 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/09 13:02:47 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:47:49 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ class Form;
 class Bureaucrat
 {
     private:
-        const std::string _name;
+        std::string const _name;
         int _grade;
     public:
+        Bureaucrat();
         Bureaucrat(std::string Name, int Grade);
         Bureaucrat(const Bureaucrat& br);
         Bureaucrat& operator=(const Bureaucrat& br);

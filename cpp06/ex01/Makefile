@@ -10,9 +10,6 @@ OBJ		:= ${patsubst %.cpp, %.o, ${SRC}}
 
 all : $(NAME)
 
-%.o: %.cpp Data.hpp
-	$(CC) $(CFLAGE) -c -o $@ $<
-
 clean :
 	rm -rf $(OBJ)
 
@@ -21,5 +18,8 @@ fclean : clean
 
 re : fclean all
 
-$(NAME) : Data.hpp $(OBJ)
-	${CC} ${CFLAGE} ${OBJ} -o ${NAME}
+%.o: %.cpp Data.hpp
+	$(CC) $(FLAGS) -c -o $@ $<
+
+$(NAME): Data.hpp $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

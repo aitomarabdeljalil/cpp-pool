@@ -1,7 +1,7 @@
 NAME	:= convert
 CC		:= c++
 CFLAGE	:= -Wall -Wextra -Werror -std=c++98
-SRC		:= main.cpp
+SRC		:= main.cpp tools.cpp
 
 OBJ		:= ${patsubst %.cpp, %.o, ${SRC}}
 
@@ -17,5 +17,8 @@ fclean : clean
 
 re : fclean all
 
-$(NAME) :  $(SRC)
-	${CC} ${CFLAGE} ${SRC} -o ${NAME}
+%.o: %.cpp Convert.hpp
+	$(CC) $(FLAGS) -c -o $@ $<
+
+$(NAME): Convert.hpp $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

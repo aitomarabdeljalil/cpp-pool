@@ -6,13 +6,13 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:33:38 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/09 16:57:36 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/10 15:28:09 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : _name("default"), _grade(150) 
 {
 }
 
@@ -36,7 +36,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& br) : _name(br.getName())
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& br)
 {
-    this->_grade = br._grade;
+    new (this) Bureaucrat(br);
     return *this;
 }
 
