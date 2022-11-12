@@ -6,13 +6,13 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:10:45 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/08 14:56:19 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:08:00 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "shrubberyCreationForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreation", 145, 137) , target("")
 {
 }
 
@@ -20,14 +20,17 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : Form(other.getName(), other.getGradeRs(), other.getGradeRe())
 {
-    this->target = other.target;
+	this->target = other.target;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
 {
-    *this = other;
+	Form *f = this;
+
+	*f = other;
+    this->target = other.target;
     return *this;
 }
 
@@ -35,7 +38,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
 
-void shrubberyCreationForm::execute(Bureaucrat const & executor) const
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if (!getSigned())
         throw Form::NotSignedException();

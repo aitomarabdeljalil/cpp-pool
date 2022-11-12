@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:08:25 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/09 10:41:30 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:00:57 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Intern
 public:
     Intern();
     Intern(const Intern& other);
-    Intern& operator==(const Intern& other);
+    Intern& operator=(const Intern& other);
     Form* makeForm(std::string name, std::string target);
     ~Intern();
 };

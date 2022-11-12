@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:33:38 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/10 15:28:09 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/11 10:48:33 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
 Bureaucrat::Bureaucrat(std::string Name, int Grade) : _name(Name)
 {
     if (Grade < 1)
-    {
         throw Bureaucrat::GradeTooHighException();
-    }
-    else if (Grade > 150) {
+    else if (Grade > 150)
         throw Bureaucrat::GradeTooLowException();
-    }
     else
         _grade = Grade;
 }

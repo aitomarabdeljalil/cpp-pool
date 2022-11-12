@@ -6,25 +6,22 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 19:03:44 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/10 18:03:24 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/12 10:46:53 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() : _Name(""), _GradeRs(150), _GradeRe(150), _Signed(false) {}
+Form::Form() : _Name(""), _Signed(false), _GradeRs(150), _GradeRe(150) {}
 
-Form::Form(const Form& fr) : _Name(fr._Name)
+Form::Form(const Form& fr) : _Name(fr._Name), _Signed(fr._Signed), _GradeRs(fr._GradeRs), _GradeRe(fr._GradeRe)
 {
-    _GradeRs = fr._GradeRs;
-    _GradeRe = fr._GradeRe;
-    _Signed = fr._Signed;
 }
 
 Form& Form::operator=(const Form& fr)
 {
-    new (this) Form(fr);
+    _Signed = fr._Signed;
     return *this;
 }
 

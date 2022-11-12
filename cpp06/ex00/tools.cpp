@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 19:09:16 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/10 19:09:45 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:46:46 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void printRes(char c, int n, float f, double d)
     }
 }
 
-bool HandelInt(char *str)
+bool ft_Cast(char *str)
 {
     double _tocast = atof(str);
     char c = static_cast<char>(_tocast);

@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:03:34 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/08 17:03:29 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:05:45 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,29 @@ int getRandom()
 
 RobotomyRequestForm::RobotomyRequestForm() {}
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) Form("RobotomyRequest", 72, 45), target(target) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequest", 72, 45), target(target) {}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : Form(other.getName(), other.getGradeRs(), other.getGradeRe())
+{
+    this->target = other.target;
+}
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
 {
-    this = other;
+    Form *f = this;
+
+	*f = other;
+    this->target = other.target;
     return *this;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor) const
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
     if (!getSigned())
         throw Form::NotSignedException();
-    if (execute.getGrade() > getGradeRe())
+    if (executor.getGrade() > getGradeRe())
         throw Form::GradeTooLowException();
     
     int nbr = getRandom();

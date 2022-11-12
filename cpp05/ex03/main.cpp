@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 14:35:08 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/09 10:37:09 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:27:37 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 #include <fstream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include ""
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	try
 	{
-		
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	}
-	catch(const std::exception& e)
+
 	{
-		std::cerr << e.what() << '\n';
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("test", "1337");
 	}
-	
 }

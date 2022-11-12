@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:33:38 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/10 18:46:08 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:17:37 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,12 @@ void Bureaucrat::signForm(const Form& fr)
         std::cout << *this << " couldn’t sign  " << fr << " because his grade is too low." << std::endl;
 }
 
-void Bureaucrat::excuteForm(Form const & form)
+void Bureaucrat::executeForm(Form const & form)
 {
     if (form.getSigned())
-    {
-        form.execute(*this);
         std::cout << this->getName() << " excuted " << form.getName() << std::endl;
-    }
     else
-        std::cout << this->getName() << "couldnt execute " << form.getName() << std::endl;
+        std::cout << this->getName() << " couldnt execute " << form.getName() << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& br)

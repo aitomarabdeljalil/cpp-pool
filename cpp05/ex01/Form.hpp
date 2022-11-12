@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:58:13 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/10 18:26:46 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/12 10:47:16 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Form
     private:
         std::string const _Name;
         bool _Signed;
-        const int _GradeRs;
-        const int _GradeRe;
+        int const _GradeRs;
+        int const _GradeRe;
     public:
         Form();
         Form(const Form& fr);

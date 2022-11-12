@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:31:11 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/08 16:59:09 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:06:53 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ROBOTOMYREQUESTFORM_HPP
 # include <iostream>
 # include <string>
-# include "Form"
+# include "Form.hpp"
 # include "Bureaucrat.hpp"
 
 class RobotomyRequestForm : public Form
@@ -23,6 +23,7 @@ private:
     std::string target;
 public:
     RobotomyRequestForm();
+    RobotomyRequestForm(const RobotomyRequestForm& other);
     RobotomyRequestForm(std::string target);
     RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
     ~RobotomyRequestForm();

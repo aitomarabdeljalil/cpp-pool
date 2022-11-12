@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 15:58:13 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/10 18:27:49 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:06:28 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@ class Bureaucrat;
 class Form
 {
     private:
-        std::string const _Name;
+        const std::string _Name;
         bool _Signed;
-        const int _GradeRs;
-        const int _GradeRe;
+        int const _GradeRs;
+        int const _GradeRe;
     public:
         Form();
+        Form(std::string Name, int GradeRs, int GradeRe);
         Form(const Form& fr);
         Form& operator=(const Form& fr);
-        Form(std::string Name, int GradeRs, int GradeRe);
         std::string getName() const;
         int getGradeRs() const;
         int getGradeRe() const;
         bool getSigned() const;
         void beSigned(const Bureaucrat& br);
         virtual void execute(Bureaucrat const & executor) const = 0;
-        ~Form();
+        virtual ~Form();
 
         class GradeTooHighException : public std::exception
         {

@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:31:27 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/08 16:42:12 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/11 14:02:36 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@ PresidentialPardonForm::PresidentialPardonForm() {}
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardon", 25, 5) , target(target) {}
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : Form(other.getName(), other.getGradeRs(), other.getGradeRe())
 {
     this->target = other.target;
 }
 
-PresidentialPardonForm& PresidentialPardonForm::operator(const PresidentialPardonForm& other)
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
 {
-    this = other;
+    Form *f = this;
+
+	*f = other;
+    this->target = other.target;
     return *this;
 }
 
