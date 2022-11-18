@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:22:15 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/13 18:58:49 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:24:53 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ public:
     {
         std::cout << "** Constructor is called **" << std::endl;
         _size = n;
-        myarray = n > 0 ? new T[_size]() : throw std::length_error("invalid size");
+        myarray = n >= 0 ? new T[_size]() : throw std::length_error("invalid size");
     }
 
     int size() const { return _size; }
@@ -70,7 +70,5 @@ public:
             delete [] myarray;
     }
 };
-
-
 
 #endif

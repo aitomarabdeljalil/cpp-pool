@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:16:26 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/11/02 11:56:25 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/18 08:18:21 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,18 @@ int Span::size() { return v.size(); }
 
 int Span::shortestSpan()
 {
-    int min;
+    int min = 1;
     int diff;
 
     if (size() >= 2)
     {
         std::sort(v.begin(), v.end());
         min = v[1] - v[0];
-        for (int i = 2; i < size(); i++)
+        for (int i = 1; i < size(); i++)
         {
             diff = v[i + 1] - v[i];
             if (diff < min)
-                min = diff;   
+                min = diff;
         }
         return min;
     }

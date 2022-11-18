@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 12:19:48 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/10/03 11:39:25 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:31:06 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void print( T const & x )
 
 int main() 
 { 
-    int tab[] = { 0, 1, 2, 3, 4 }; // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense? Awesome tab2[5]; 
+    int tab[] = { 0, 1, 2, 3, 4 }; 
     Awesome tab2[5];
     iter( tab, 5, print ); 
     iter( tab2, 5, print ); 
