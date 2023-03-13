@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 15:11:28 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/13 17:00:51 by aait-oma         ###   ########.fr       */
+/*   Created: 2023/03/13 18:17:46 by aait-oma          #+#    #+#             */
+/*   Updated: 2023/03/13 18:31:21 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#ifndef PMERGEME_HPP
+# define PMERGEME_HPP
+# include <iostream>
+# include <string>
 
-int main(int ac, char **av) {
-	if (ac != 2) {
-        std::cerr << "Error" << std::endl;
-        return 1;
-    }
-	std::string expr = av[1];
-	RPN equation(expr);
-	std::cout << equation.getResult() << std::endl;
-	return 0;
-}
+
+#endif
