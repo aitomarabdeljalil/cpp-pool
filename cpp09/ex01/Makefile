@@ -1,6 +1,6 @@
 NAME 		:= RPN
 CXX 		:= c++
-CXXFLAGS	:= -Wall -Wextra -Werror --std=c++98
+CXXFLAGS	:= -Wall -Wextra -Werror --std=c++98 -g
 SRC 		:= main.cpp RPN.cpp
 OBJ			:= ${patsubst %.cpp, %.o, ${SRC}}
 INCLUDES 	:= RPN.hpp
@@ -18,7 +18,7 @@ fclean: clean
 re: fclean all
 
 %.o: %.cpp $(INCLUDES)
-	$(CC) $(CFLAGE) -c -o $@ $<
+	$(CC) $(CXXFLAGS) -c -o $@ $<
 
 $(NAME): $(INCLUDES) $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)

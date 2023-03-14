@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:13:39 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/13 17:08:32 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/14 20:23:47 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ RPN::RPN(std::string expr)
 			this->st.push(expr[i] - '0');
 		else if (expr[i] == '+') {
 			if (this->st.size() < 2)
-                std::cerr << "Error" << std::endl;
+				throw std::runtime_error("Error");
             op1 = st.top();
 			this->st.pop();
             op2 = st.top();
@@ -44,7 +44,7 @@ RPN::RPN(std::string expr)
 		}
 		else if (expr[i] == '-') {
 			if (this->st.size() < 2)
-                std::cerr << "Error" << std::endl;
+				throw std::runtime_error("Error");
             op2 = st.top();
 			this->st.pop();
             op1 = st.top();
@@ -53,7 +53,7 @@ RPN::RPN(std::string expr)
 		}
 		else if (expr[i] == '*') {
 			if (this->st.size() < 2)
-                std::cerr << "Error" << std::endl;
+				throw std::runtime_error("Error");
             op1 = st.top();
 			this->st.pop();
             op2 = st.top();
@@ -62,18 +62,18 @@ RPN::RPN(std::string expr)
 		}
 		else if (expr[i] == '/') {
 			if (this->st.size() < 2)
-                std::cerr << "Error" << std::endl;
+				throw std::runtime_error("Error");
             op2 = st.top();
 			this->st.pop();
             op1 = st.top();
 			this->st.pop();
 			if (op2 == 0)
-				std::cerr << "Error div by 0" << std::endl;
+				throw std::runtime_error("Error div by 0");
             this->st.push(op1 / op2);
 		}
 	}
 	if (st.size() != 1)
-        std::cerr << "Error: Invalid expression" << std::endl;
+		throw std::runtime_error("Error");
 }
 
 int	RPN::getResult() {
