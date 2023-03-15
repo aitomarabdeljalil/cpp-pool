@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 15:13:39 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/15 10:02:53 by aait-oma         ###   ########.fr       */
+/*   Created: 2023/03/15 17:28:36 by aait-oma          #+#    #+#             */
+/*   Updated: 2023/03/15 18:48:21 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN_HPP
-# define RPN_HPP
-# include <iostream>
-# include <string>
-# include <stack>
+#include "PmergeMe.hpp"
 
-int	CalcResult(std::string expr);
-
-#endif
+std::string    trim(std::string s, std::string set)
+{
+    s.erase(0, s.find_first_not_of(set));
+    s.erase(s.find_last_not_of(set) + 1);
+    return (s);
+}

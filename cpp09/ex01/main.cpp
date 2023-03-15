@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:11:28 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/14 20:21:39 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/15 10:03:49 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int main(int ac, char **av) {
 			return 1;
 		}
 		std::string expr = av[1];
-		RPN equation(expr);
-		std::cout << equation.getResult() << std::endl;
+		std::cout << CalcResult(expr) << std::endl;
 	}
 	catch(const std::exception& e) {
 		std::cerr << e.what() << std::endl;
