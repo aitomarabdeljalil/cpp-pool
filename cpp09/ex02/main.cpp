@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 19:20:49 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/15 16:13:37 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:00:30 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,30 @@ int main(int ac, char **av) {
 			int value = atoi(av[i]);
 			if (value <= 0)
 			{
-				std::cerr << "Error: Non-positive value provided" << std::endl;
+				std::cerr << "Error" << std::endl;
 				return 1;
 			}
 			_vec.push_back(value);
+			_deq.push_back(value);
 		}
+		std::cout << "Before:\t";
+		for (int i = 0; i < _vec.size(); i++) {
+			std::cout << _vec[i] << " ";
+		}
+		std::cout << std::endl;
+		clock_t	time_vec = clock();
+		merge_sort(_vec);
+		time_vec = clock() - time_vec;
+		clock_t	time_deq = clock();
+		merge_sort(_deq);
+		time_deq = clock() - time_deq;
+		std::cout << "After:\t";
+		for (int i = 0; i < _vec.size(); i++) {
+			std::cout << _vec[i] << " ";
+		}
+		std::cout << std::endl;
+		std::cout << "Time to process a range of " << _vec.size() << " elements with std::vector " << (float)time_vec/CLOCKS_PER_SEC << " us" << std::endl;
+		std::cout << "Time to process a range of " << _deq.size() << " elements with std::deque " << (float)time_deq/CLOCKS_PER_SEC << " us" << std::endl;
 	}
 	catch(const std::exception& e)
 	{

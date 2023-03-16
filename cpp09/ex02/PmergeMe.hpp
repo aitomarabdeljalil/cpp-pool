@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:17:46 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/15 19:07:29 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:33:35 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,19 @@ void	merge_sort(Container& container) {
     }
 }
 
-template <typename Container>
-void	fillContainer(Container) {
-	
-}
+// int     getNumber(char *arg) {
+
+// }
+
+// template <typename Container>
+// void	fillContainer(Container& container, char **argv) {
+
+//     for (int i = 0; i < container.size(); i++)
+//     {
+//         container.push_pack();
+//     }
+
+// }
 
 std::string    trim(std::string s, std::string set);
 
