@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 18:17:46 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/16 18:33:35 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/17 18:22:20 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,32 +21,16 @@
 # include <ctime>
 # define WHITE_SPACES (" \t\n\r\f\v")
 
-template <typename Container>
-void	merge_sort(Container& container) {
-    if (container.size() > 1) {
-        Container left(container.begin(), container.begin() + container.size() / 2);
-        Container right(container.begin() + container.size() / 2, container.end());
-
-        merge_sort(left);
-        merge_sort(right);
-
-        std::merge(left.begin(), left.end(), right.begin(), right.end(), container.begin());
+template<class Iter>
+void merge_sort(Iter first, Iter last)
+{
+    if (last - first > 1) {
+        Iter middle = first + (last - first) / 2;
+        merge_sort(first, middle);
+        merge_sort(middle, last);
+        std::inplace_merge(first, middle, last);
     }
 }
-
-// int     getNumber(char *arg) {
-
-// }
-
-// template <typename Container>
-// void	fillContainer(Container& container, char **argv) {
-
-//     for (int i = 0; i < container.size(); i++)
-//     {
-//         container.push_pack();
-//     }
-
-// }
 
 std::string    trim(std::string s, std::string set);
 

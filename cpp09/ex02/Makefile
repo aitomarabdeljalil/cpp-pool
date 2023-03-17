@@ -18,7 +18,7 @@ fclean: clean
 re: fclean all
 
 %.o: %.cpp $(INCLUDES)
-	$(CC) $(CXXFLAGS) -c -o $@ $<
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 $(NAME): $(INCLUDES) $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
