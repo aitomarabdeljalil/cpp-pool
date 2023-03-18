@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 19:20:49 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/17 18:58:54 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/18 09:37:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(int ac, char **av) {
 			long value = strtol(nb, &ptr, 10);
 			if (*nb == '\0' || *ptr != '\0')
 				throw std::invalid_argument("Error");
-			if (value <= 0)
+			if (value < 0 || value > INT_MAX)
 				throw std::invalid_argument("Error");
 			_vec.push_back(value);
 			_deq.push_back(value);
