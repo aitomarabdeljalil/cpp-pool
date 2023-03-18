@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 17:02:04 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/17 17:51:00 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/18 16:46:56 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include<string>
 # include<map>
 # include<list>
+# include <time.h>
 
 std::string	trim(std::string s, std::string set)
 {
