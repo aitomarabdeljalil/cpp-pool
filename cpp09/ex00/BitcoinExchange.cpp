@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 10:43:01 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/21 17:32:30 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/21 17:44:38 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ time_t	hundelTime(std::string str) {
 		break;
   	}
 	if (result.tm_mday < 1 || result.tm_mday > maxDays)
-    	throw std::invalid_argument("Error");
+    	throw std::invalid_argument("Error: bad input => " + str);
 	if (!_tme || *_tme != '\0')
-		throw std::invalid_argument("Error");
+		throw std::invalid_argument("Error: bad input => " + str);
 	return (mktime(&result));
 }
 
@@ -64,7 +64,7 @@ float	hundelFloat(std::string str) {
 	float value = strtof(fnb, &ptr);
 
 	if (*ptr != '\0' || value == HUGE_VALF || value == - HUGE_VALF)
-		throw std::invalid_argument("Error");
+		throw std::invalid_argument("Error: bad input => " + str);
 	return value;
 }
 
