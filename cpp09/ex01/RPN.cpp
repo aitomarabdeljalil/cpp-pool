@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 09:58:55 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/15 17:01:51 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/25 15:49:23 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int CalcResult(std::string expr)
 	for (size_t i = 0; i < expr.length(); i++)
 	{
 		int op1, op2;
+		if (std::isspace(expr[i]))
+			continue;
 		if (expr[i] >= '0' && expr[i] <= '9')
 			st.push(expr[i] - '0');
 		else if (expr[i] == '+') {
@@ -58,8 +60,10 @@ int CalcResult(std::string expr)
 				throw std::runtime_error("Error div by 0");
             st.push(op1 / op2);
 		}
+		else
+			throw std::runtime_error("Error");
 	}
-	if (st.empty())
+	if (st.empty() || st.size() != 1)
 		throw std::runtime_error("Error");
 	return st.top();
 }

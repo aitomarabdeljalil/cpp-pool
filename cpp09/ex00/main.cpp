@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 17:01:12 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/21 17:33:17 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/25 15:34:20 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int main(int ac, char **av)
 		std::map<time_t, float> _db = dbList("data.csv");
 		std::string		line;
 		std::ifstream	readFile(av[1]);
+		if (!readFile.is_open())
+			throw std::invalid_argument("Error: could not open file.");
 		bool			firstLine = true;
 		while (std::getline (readFile, line)) {
 			if (firstLine && line == "date | value") {

@@ -6,19 +6,11 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 19:20:49 by aait-oma          #+#    #+#             */
-/*   Updated: 2023/03/18 09:37:41 by aait-oma         ###   ########.fr       */
+/*   Updated: 2023/03/25 14:18:24 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-
-void showdq(std::deque<int> g)
-{
-    std::deque<int>::iterator it;
-    for (it = g.begin(); it != g.end(); ++it)
-        std::cout << '\t' << *it;
-    std::cout << std::endl;
-}
 
 int main(int ac, char **av) {
 	std::vector<int> _vec;
